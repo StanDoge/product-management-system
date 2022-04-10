@@ -10,4 +10,5 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <exec.mainClass>PRN215_4_3.PRN215_4_3</exec.mainClass>
     </properties>
+    <name>PRN215_GRUPO_4_3</name>
 </project>
