@@ -1,13 +1,15 @@
 package Clases;
 
 public class Electrodomestico {
+
+    final float IVA = 0.13f;
     String marca;
     int nSerie;
     String tipo;
     boolean estado;
-    final float IVA = 0.13f;
     float precio;
     float precioTotal;
+    Empresa propietario;
 
     //Getters & Setters
     public String getMarca() {
@@ -60,5 +62,13 @@ public class Electrodomestico {
 
     public void setPrecioTotal(float precioTotal) {
         this.precioTotal = precioTotal;
+    }
+
+    public Empresa getPropietario() {
+        return propietario;
+    }
+
+    public void setPropietario(Empresa propietario) {
+        this.propietario = propietario;
     }
 }

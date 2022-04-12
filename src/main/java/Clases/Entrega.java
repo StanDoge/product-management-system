@@ -1,12 +1,13 @@
 package Clases;
 
 public class Entrega {
+
     int entregaID;
     String fechaEnvio;
+    //TODO: investigar si existe el tipo date o similar y usar la funcion date.now() o similar
     int cantidadElectrodomesticos;
 
     //Getters & Setters
-
     public int getEntregaID() {
         return entregaID;
     }
