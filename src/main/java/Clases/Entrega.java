@@ -4,7 +4,7 @@ public class Entrega {
     int entregaID;
     String fechaEnvio;
     int cantidadElectrodomesticos;
-    
+
     //Getters & Setters
 
     public int getEntregaID() {
