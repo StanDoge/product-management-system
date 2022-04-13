@@ -1,12 +1,22 @@
 package Clases;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Entrega {
 
     int entregaID;
-    Date fechaEnvio;
+    String fechaEnvio;
     int cantidadElectrodomesticos;
+
+    //Contructor
+
+    public Entrega(int entregaID, Date fechaEnvio, int cantidadElectrodomesticos) {
+        this.entregaID = entregaID;
+        //TODO: definir que algoritmo usa para generar id's
+        this.fechaEnvio = simplificadorFecha();
+        this.cantidadElectrodomesticos = cantidadElectrodomesticos;
+    }
 
     //Getters & Setters
     public int getEntregaID() {
@@ -17,11 +27,11 @@ public class Entrega {
         this.entregaID = entregaID;
     }
 
-    public Date getFechaEnvio() {
+    public String getFechaEnvio() {
         return fechaEnvio;
     }
 
-    public void setFechaEnvio(Date fechaEnvio) {
+    public void setFechaEnvio(String fechaEnvio) {
         this.fechaEnvio = fechaEnvio;
     }
 
@@ -31,5 +41,18 @@ public class Entrega {
 
     public void setCantidadElectrodomesticos(int cantidadElectrodomesticos) {
         this.cantidadElectrodomesticos = cantidadElectrodomesticos;
+    }
+
+    //Metodos
+
+    /**
+     * @return la fecha del momento que el metodo se ejecuta pero en tipo String y con un formato ISO, mucho mas legible
+     * que el original del objeto Date
+     */
+    private String simplificadorFecha(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd"); /* Necesario para simplificar la manera
+        en que la fecha se muestra */
+        Date today = new Date();
+        return sdf.format(today);
     }
 }
