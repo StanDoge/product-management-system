@@ -1,10 +1,11 @@
 package Clases;
 
+import java.util.Date;
+
 public class Entrega {
 
     int entregaID;
-    String fechaEnvio;
-    //TODO: investigar si existe el tipo date o similar y usar la funcion date.now() o similar
+    Date fechaEnvio;
     int cantidadElectrodomesticos;
 
     //Getters & Setters
@@ -16,11 +17,11 @@ public class Entrega {
         this.entregaID = entregaID;
     }
 
-    public String getFechaEnvio() {
+    public Date getFechaEnvio() {
         return fechaEnvio;
     }
 
-    public void setFechaEnvio(String fechaEnvio) {
+    public void setFechaEnvio(Date fechaEnvio) {
         this.fechaEnvio = fechaEnvio;
     }
 

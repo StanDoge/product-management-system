@@ -71,4 +71,10 @@ public class Electrodomestico {
     public void setPropietario(Empresa propietario) {
         this.propietario = propietario;
     }
+
+    //metodos
+
+    public void calcularTotal(){
+        this.precioTotal = this.precio + (this.precio * IVA);
+    }
 }
