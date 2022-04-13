@@ -10,7 +10,6 @@ public class Entrega {
     int cantidadElectrodomesticos;
 
     //Contructor
-
     public Entrega(int entregaID, Date fechaEnvio, int cantidadElectrodomesticos) {
         this.entregaID = entregaID;
         //TODO: definir que algoritmo usa para generar id's
@@ -46,7 +45,7 @@ public class Entrega {
     //Metodos
 
     /**
-     * @return la fecha del momento que el metodo se ejecuta pero en tipo String y con un formato ISO, mucho mas legible
+     * @return Fecha del momento que el metodo se ejecuta pero en tipo String y con un formato ISO, mucho mas legible
      * que el original del objeto Date
      */
     private String simplificadorFecha(){
