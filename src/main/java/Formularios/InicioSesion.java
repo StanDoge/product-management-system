@@ -1,6 +1,8 @@
 
 package Formularios;
 
+import javax.swing.JOptionPane;
+
 public class InicioSesion extends javax.swing.JFrame {
 
     /**
@@ -21,9 +23,9 @@ public class InicioSesion extends javax.swing.JFrame {
         lblUser = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
-        txtPassword = new javax.swing.JTextField();
         btnAcceso = new javax.swing.JButton();
         btnCerrar = new javax.swing.JButton();
+        txtPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,6 +48,11 @@ public class InicioSesion extends javax.swing.JFrame {
 
         btnCerrar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnCerrar.setText("Cerrar");
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,7 +110,22 @@ public class InicioSesion extends javax.swing.JFrame {
         user=txtUser.getText();
         pwd=txtPassword.getText();
         // condicional if
+        // Se usaran dos credenciales para usuario y Administrador
+        if(user.equals("user") && pwd.equals("123")){
+            // Abre formulario de Registro
+            Registro sistema = new Registro();
+            sistema.setVisible(true);
+            this.setVisible(false);
+        }else{
+            JOptionPane.showMessageDialog(null, "Ingrese correctamente sus credenciales");
+        }
+        
     }//GEN-LAST:event_btnAccesoActionPerformed
+
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnCerrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,7 +168,7 @@ public class InicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUser;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 }
