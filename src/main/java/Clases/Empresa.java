@@ -5,6 +5,14 @@ public class Empresa {
     int empresaID;
     String nombre;
     String pais;
+    
+    //Constructor
+    public Empresa(int empresaID, String nombre, String pais) {
+        this.empresaID = empresaID;
+        this.nombre = nombre;
+        this.pais = pais;
+    }
+    
 
    //Getters & Setters
     public int getEmpresaID() {

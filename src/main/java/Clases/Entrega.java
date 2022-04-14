@@ -10,7 +10,7 @@ public class Entrega {
     int cantidadElectrodomesticos;
 
     //Contructor
-    public Entrega(int entregaID, Date fechaEnvio, Electrodomestico[] cantidadElectrodomesticos) {
+    public Entrega(int entregaID, Electrodomestico[] cantidadElectrodomesticos) {
         this.entregaID = entregaID;
         //TODO: definir que algoritmo usa para generar id's
         this.fechaEnvio = simplificadorFecha();
