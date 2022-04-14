@@ -10,11 +10,11 @@ public class Entrega {
     int cantidadElectrodomesticos;
 
     //Contructor
-    public Entrega(int entregaID, Date fechaEnvio, int cantidadElectrodomesticos) {
+    public Entrega(int entregaID, Date fechaEnvio, Electrodomestico[] cantidadElectrodomesticos) {
         this.entregaID = entregaID;
         //TODO: definir que algoritmo usa para generar id's
         this.fechaEnvio = simplificadorFecha();
-        this.cantidadElectrodomesticos = cantidadElectrodomesticos;
+        this.cantidadElectrodomesticos = cantidadElectrodomesticos.length;
     }
 
     //Getters & Setters
@@ -45,8 +45,9 @@ public class Entrega {
     //Metodos
 
     /**
-     * @return Fecha del momento que el metodo se ejecuta pero en tipo String y con un formato ISO, mucho mas legible
+     * @return fecha del momento que el metodo se ejecuta en tipo String y con un formato ISO, mucho mas legible
      * que el original del objeto Date
+     * @author Stanley
      */
     private String simplificadorFecha(){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd"); /* Necesario para simplificar la manera
