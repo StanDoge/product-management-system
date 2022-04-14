@@ -4,22 +4,12 @@ import Clases.Electrodomestico;
 import Clases.Empresa;
 import Clases.Entrega;
 
-<<<<<<< HEAD
-
 /**
- * @author :
- *  Adam Carnet
- *  Cesar Carnet
- *  Stanley MR210083
- * */
-=======
-/*
 @authors
--Adam ER21008
--Cesar CARNET
--Stanley MR21083
+*Adam ER21008
+*Cesar CARNET
+*Stanley MR21083
 */
->>>>>>> d30c41b85eedf6655c731cf81a232555e1bcdaa5
 
 public class PRN215_4_3 {
 
