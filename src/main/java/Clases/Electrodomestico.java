@@ -6,10 +6,20 @@ public class Electrodomestico {
     String marca;
     int nSerie;
     String tipo;
-    boolean estado;
+    boolean estado = true;
     float precio;
     float precioTotal;
     Empresa propietario;
+
+    //Constructor
+    public Electrodomestico(String marca, int nSerie, String tipo, float precio, Empresa propietario) {
+        this.marca = marca;
+        this.nSerie = nSerie;
+        //TODO: algoritmo para autogenerar numeros de serie
+        this.tipo = tipo;
+        this.precio = precio;
+        this.propietario = propietario;
+    }
 
     //Getters & Setters
     public String getMarca() {
@@ -70,5 +80,15 @@ public class Electrodomestico {
 
     public void setPropietario(Empresa propietario) {
         this.propietario = propietario;
+    }
+
+    //metodos
+
+    /**
+     * Inicializa el valor del atributo precioTotal sumando el valor del precio unitario + el IVA de dicho precio
+     * @author Stanley
+     */
+    public void calcularTotal(){
+        this.precioTotal = this.precio + (this.precio * IVA);
     }
 }
