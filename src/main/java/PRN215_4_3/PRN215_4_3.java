@@ -5,11 +5,11 @@ import Clases.Empresa;
 import Clases.Entrega;
 
 /**
-@authors
-*Adam ER21008
-*Cesar CARNET
-*Stanley MR21083
-*/
+ *@authors
+ *Adam ER21008
+ *Cesar CARNET
+ *Stanley MR21083
+ **/
 
 public class PRN215_4_3 {
 
@@ -25,12 +25,12 @@ public class PRN215_4_3 {
         Entrega primeraEntrega = new Entrega(11,cantidadEjemplo);
 
         /*
-          Usar String Interpolation hace mas legible  y facil al momento de imprimir data, propongo usarlo como
-          convencion en el proyecto en lugar de ir sumando uno por uno cada variable.
+         * Usar String Interpolation hace mas legible  y facil al momento de imprimir data, propongo usarlo como
+           convencion en el proyecto en lugar de ir sumando uno por uno cada variable.
 
-          %s = variables de tipo stirng
-          %d = varibles de tipo numerico
-        */
+         * %s = variables de tipo stirng
+         * %d = varibles de tipo numerico
+         */
         System.out.printf("La empresa %s es duena del stock de longitud %d , lleno de productos del tipo %s%n",
                 generica.getNombre(), primeraEntrega.getCantidadElectrodomesticos(), licuadora.getTipo());
     }
