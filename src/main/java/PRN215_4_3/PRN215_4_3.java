@@ -14,7 +14,7 @@ import Clases.Entrega;
 public class PRN215_4_3 {
 
     public static void main(String[] args) {
-        
+
         
         Empresa generica = new Empresa(222,"Generica","Colombia");
         Electrodomestico licuadora = new Electrodomestico("Generica Edition",12323,"Cocina", 23.83f,generica);

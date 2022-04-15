@@ -384,7 +384,7 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTotalActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        // TODO add your handling code here:
+        //TODO: codigo de creacion de objetos -Admin- -Empresa- -Electrodomestico-
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
