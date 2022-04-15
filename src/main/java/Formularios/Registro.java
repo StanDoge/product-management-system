@@ -50,8 +50,6 @@ public class Registro extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         lblInfoAdmin = new javax.swing.JLabel();
-        txtIdAdmin = new javax.swing.JTextField();
-        lblIdAdmin = new javax.swing.JLabel();
         txtNombreAdmin = new javax.swing.JTextField();
         lblNombreAdmin = new javax.swing.JLabel();
         txtNomAlmacen = new javax.swing.JTextField();
@@ -59,21 +57,31 @@ public class Registro extends javax.swing.JFrame {
         txtDireccion = new javax.swing.JTextField();
         lblDireccion = new javax.swing.JLabel();
         lblInfoEmpresa = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
         btnCalcularTotal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblSistema.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        lblSistema.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 16)); // NOI18N
         lblSistema.setText("Sistema de administración de electrodomesticos al almacén SV ");
 
         btnSalir.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnSalir.setText("Salir");
 
-        lblInfoProducto.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblInfoProducto.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         lblInfoProducto.setText("Información del producto");
 
         lblNombreP.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblNombreP.setText("Nombre");
+
+        txtNombreP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombrePActionPerformed(evt);
+            }
+        });
 
         lblMarca.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblMarca.setText("Marca");
@@ -84,9 +92,7 @@ public class Registro extends javax.swing.JFrame {
         lblSerie.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblSerie.setText("N° de serie");
 
-        jLabel5.setText("jLabel1");
-
-        jTextField5.setText("jTextField1");
+        jLabel5.setText("Cantidad");
 
         lblPrecioU.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblPrecioU.setText("Precio unitario");
@@ -120,11 +126,8 @@ public class Registro extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
-        lblInfoAdmin.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblInfoAdmin.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         lblInfoAdmin.setText("Información del administrador");
-
-        lblIdAdmin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lblIdAdmin.setText("ID Administrador");
 
         lblNombreAdmin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblNombreAdmin.setText("Nombre Administrador");
@@ -135,33 +138,53 @@ public class Registro extends javax.swing.JFrame {
         lblDireccion.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblDireccion.setText("Dirección");
 
-        lblInfoEmpresa.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblInfoEmpresa.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         lblInfoEmpresa.setText("Información de empresa");
+
+        jLabel1.setText("Nombre Empresa");
+
+        jLabel2.setText("Pais de origen");
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblIdAdmin)
-                    .addComponent(txtIdAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNombreAdmin)
-                    .addComponent(txtNombreAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNombreAlm)
-                    .addComponent(txtNomAlmacen, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDireccion)
-                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(125, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblInfoAdmin)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblInfoEmpresa)
-                        .addGap(15, 15, 15)))
+                .addComponent(lblInfoAdmin)
                 .addGap(97, 97, 97))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(lblNombreAdmin)
+                            .addComponent(txtNombreAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNombreAlm)
+                            .addComponent(txtNomAlmacen, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDireccion)
+                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(lblInfoEmpresa)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,25 +192,34 @@ public class Registro extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(lblInfoAdmin)
                 .addGap(27, 27, 27)
-                .addComponent(lblIdAdmin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtIdAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(lblNombreAdmin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(txtNombreAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblNombreAlm)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(txtNomAlmacen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblDireccion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(24, 24, 24)
                 .addComponent(lblInfoEmpresa)
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
+
+        txtNombreAdmin.getAccessibleContext().setAccessibleName("txtAdmin");
+        txtNomAlmacen.getAccessibleContext().setAccessibleName("txtAlmacen");
+        txtDireccion.getAccessibleContext().setAccessibleName("txtDireccion");
+        jTextField1.getAccessibleContext().setAccessibleName("txtEmpresa");
 
         btnCalcularTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnCalcularTotal.setText("Calcular total a pagar");
@@ -205,10 +237,10 @@ public class Registro extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(99, 99, 99)
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(94, 94, 94)
                         .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90)
+                        .addGap(102, 102, 102)
                         .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,7 +270,7 @@ public class Registro extends javax.swing.JFrame {
                         .addComponent(lblSistema)))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,11 +323,19 @@ public class Registro extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(btnCalcularTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addGap(0, 15, Short.MAX_VALUE))
         );
+
+        txtNombreP.getAccessibleContext().setAccessibleName("txtNombre");
+        txtMarca.getAccessibleContext().setAccessibleName("txtMarca");
+        txtTipoProd.getAccessibleContext().setAccessibleName("txtTipo");
+        txtSerie.getAccessibleContext().setAccessibleName("txtNSerie");
+        jTextField5.getAccessibleContext().setAccessibleName("txtCantidad");
+        txtPrecioU.getAccessibleContext().setAccessibleName("txtPrecio");
+        txtTotal.getAccessibleContext().setAccessibleName("txtTotal");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -307,6 +347,18 @@ public class Registro extends javax.swing.JFrame {
     private void btnCalcularTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularTotalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCalcularTotalActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void txtNombrePActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombrePActionPerformed
 
     /**
      * @param args the command line arguments
@@ -348,13 +400,16 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel lblDireccion;
-    private javax.swing.JLabel lblIdAdmin;
     private javax.swing.JLabel lblInfoAdmin;
     private javax.swing.JLabel lblInfoEmpresa;
     private javax.swing.JLabel lblInfoProducto;
@@ -368,7 +423,6 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JLabel lblTipo;
     private javax.swing.JLabel lblTotal;
     private javax.swing.JTextField txtDireccion;
-    private javax.swing.JTextField txtIdAdmin;
     private javax.swing.JTextField txtMarca;
     private javax.swing.JTextField txtNomAlmacen;
     private javax.swing.JTextField txtNombreAdmin;
