@@ -39,7 +39,6 @@ public class Registro extends javax.swing.JFrame {
         lblSerie = new javax.swing.JLabel();
         txtSerie = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
         lblPrecioU = new javax.swing.JLabel();
         txtPrecioU = new javax.swing.JTextField();
         lblTotal = new javax.swing.JLabel();
@@ -62,6 +61,7 @@ public class Registro extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         btnCalcularTotal = new javax.swing.JButton();
+        jTextField4 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,6 +100,12 @@ public class Registro extends javax.swing.JFrame {
         lblTotal.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblTotal.setText("Total");
 
+        txtTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTotalActionPerformed(evt);
+            }
+        });
+
         btnLimpiar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -110,6 +116,11 @@ public class Registro extends javax.swing.JFrame {
 
         btnRegistrar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -217,9 +228,15 @@ public class Registro extends javax.swing.JFrame {
         );
 
         txtNombreAdmin.getAccessibleContext().setAccessibleName("txtAdmin");
+        lblNombreAdmin.getAccessibleContext().setAccessibleName("lbAdmin");
         txtNomAlmacen.getAccessibleContext().setAccessibleName("txtAlmacen");
+        lblNombreAlm.getAccessibleContext().setAccessibleName("lbAlmacen");
         txtDireccion.getAccessibleContext().setAccessibleName("txtDireccion");
+        lblDireccion.getAccessibleContext().setAccessibleName("lbDireccion");
+        jLabel1.getAccessibleContext().setAccessibleName("lbEmpresa");
+        jLabel2.getAccessibleContext().setAccessibleName("lbPais");
         jTextField1.getAccessibleContext().setAccessibleName("txtEmpresa");
+        jTextField2.getAccessibleContext().setAccessibleName("txtPais");
 
         btnCalcularTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnCalcularTotal.setText("Calcular total a pagar");
@@ -243,14 +260,14 @@ public class Registro extends javax.swing.JFrame {
                         .addGap(102, 102, 102)
                         .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblNombreP)
-                            .addComponent(txtNombreP, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombreP, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
                             .addComponent(lblTipo)
-                            .addComponent(txtTipoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTipoProd, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
                             .addComponent(jLabel5)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCalcularTotal))
+                            .addComponent(btnCalcularTotal)
+                            .addComponent(jTextField4))
                         .addGap(157, 157, 157)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblMarca)
@@ -306,15 +323,15 @@ public class Registro extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblPrecioU)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtPrecioU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(lblTotal)
+                                .addComponent(txtPrecioU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(lblTotal))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(14, 14, 14)
+                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -333,9 +350,11 @@ public class Registro extends javax.swing.JFrame {
         txtMarca.getAccessibleContext().setAccessibleName("txtMarca");
         txtTipoProd.getAccessibleContext().setAccessibleName("txtTipo");
         txtSerie.getAccessibleContext().setAccessibleName("txtNSerie");
-        jTextField5.getAccessibleContext().setAccessibleName("txtCantidad");
+        jLabel5.getAccessibleContext().setAccessibleName("lbCantidad");
         txtPrecioU.getAccessibleContext().setAccessibleName("txtPrecio");
         txtTotal.getAccessibleContext().setAccessibleName("txtTotal");
+        jPanel1.getAccessibleContext().setAccessibleName("");
+        jTextField4.getAccessibleContext().setAccessibleName("txtCantidad");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -359,6 +378,14 @@ public class Registro extends javax.swing.JFrame {
     private void txtNombrePActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombrePActionPerformed
+
+    private void txtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTotalActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -408,7 +435,7 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel lblDireccion;
     private javax.swing.JLabel lblInfoAdmin;
     private javax.swing.JLabel lblInfoEmpresa;
