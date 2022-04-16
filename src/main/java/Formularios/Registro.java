@@ -401,6 +401,8 @@ public class Registro extends javax.swing.JFrame {
                 + "el arreglo es de tipo %s",stockProductos.length
                 ,generica.getNombre(),stockProductos[0].getTipo());
 
+        mostrarProductos(stockProductos);
+
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
@@ -418,6 +420,14 @@ public class Registro extends javax.swing.JFrame {
         }
         return stockProductos;
     }
+
+    public void mostrarProductos(Electrodomestico[] arr){
+        for (Electrodomestico e : arr) {
+            System.out.println(e);
+        }
+
+    }
+
 
 
 
