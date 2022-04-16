@@ -396,6 +396,10 @@ public class Registro extends javax.swing.JFrame {
         int cantidad = Integer.parseInt(txtCantidad.getText());
 
         Electrodomestico[] stockProductos = generarProductos(serie,precio,generica,cantidad);
+        
+        System.out.printf("El arreglo tiene longitud de %d, con la empresa %s y "
+                + "el arreglo es de tipo %s",stockProductos.length
+                ,generica.getNombre(),stockProductos[0].getTipo());
 
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
