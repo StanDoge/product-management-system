@@ -30,6 +30,7 @@ public class PRN215_4_3 {
          * %s = variables de tipo stirng
          * %d = varibles de tipo numerico
          */
+        
         System.out.printf("La empresa %s es duena del stock de longitud %d , lleno de productos del tipo %s%n",
                 generica.getNombre(), primeraEntrega.getCantidadElectrodomesticos(), licuadora.getTipo());
     }

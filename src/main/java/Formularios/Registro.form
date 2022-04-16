@@ -38,10 +38,10 @@
                           <Component id="lblNombreP" min="-2" max="-2" attributes="0"/>
                           <Component id="txtNombreP" pref="162" max="32767" attributes="0"/>
                           <Component id="lblTipo" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtTipoProd" alignment="0" pref="162" max="32767" attributes="0"/>
+                          <Component id="txtTipo" alignment="0" pref="162" max="32767" attributes="0"/>
                           <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnCalcularTotal" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField4" max="32767" attributes="0"/>
+                          <Component id="txtCantidad" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -100,7 +100,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="lblTipo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtTipoProd" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTipo" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="lblSerie" min="-2" max="-2" attributes="0"/>
@@ -120,7 +120,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="jTextField4" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtCantidad" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -206,7 +206,7 @@
         <Property name="text" type="java.lang.String" value="Tipo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtTipoProd">
+    <Component class="javax.swing.JTextField" name="txtTipo">
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="txtTipo"/>
       </AccessibilityProperties>
@@ -330,14 +330,14 @@
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               <Component id="lblNombreAdmin" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtNombreAdmin" alignment="0" min="-2" pref="162" max="-2" attributes="0"/>
+                              <Component id="txtAdmin" alignment="0" min="-2" pref="162" max="-2" attributes="0"/>
                               <Component id="lblNombreAlm" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtNomAlmacen" alignment="0" min="-2" pref="162" max="-2" attributes="0"/>
+                              <Component id="txtAlmacen" alignment="0" min="-2" pref="162" max="-2" attributes="0"/>
                               <Component id="lblDireccion" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="txtDireccion" alignment="0" min="-2" pref="162" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField1" alignment="0" pref="161" max="32767" attributes="0"/>
+                                  <Component id="txtPais" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtEmpresa" alignment="0" pref="161" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -358,11 +358,11 @@
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="lblNombreAdmin" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="txtNombreAdmin" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAdmin" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="lblNombreAlm" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="txtNomAlmacen" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAlmacen" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="lblDireccion" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -372,11 +372,11 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtEmpresa" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPais" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="36" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -391,7 +391,7 @@
             <Property name="text" type="java.lang.String" value="Informaci&#xf3;n del administrador"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtNombreAdmin">
+        <Component class="javax.swing.JTextField" name="txtAdmin">
           <AccessibilityProperties>
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="txtAdmin"/>
           </AccessibilityProperties>
@@ -407,7 +407,7 @@
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="lbAdmin"/>
           </AccessibilityProperties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtNomAlmacen">
+        <Component class="javax.swing.JTextField" name="txtAlmacen">
           <AccessibilityProperties>
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="txtAlmacen"/>
           </AccessibilityProperties>
@@ -463,20 +463,20 @@
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="lbPais"/>
           </AccessibilityProperties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="txtEmpresa">
           <AccessibilityProperties>
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="txtEmpresa"/>
           </AccessibilityProperties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmpresaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="txtPais">
           <AccessibilityProperties>
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="txtPais"/>
           </AccessibilityProperties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPaisActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -492,7 +492,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalcularTotalActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="txtCantidad">
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="txtCantidad"/>
       </AccessibilityProperties>
