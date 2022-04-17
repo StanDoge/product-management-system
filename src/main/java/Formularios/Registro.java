@@ -7,6 +7,8 @@ package Formularios;
 
 import Clases.Electrodomestico;
 import Clases.Empresa;
+import java.util.Random;
+import java.lang.Math;
 
 /**
  *
@@ -390,15 +392,17 @@ public class Registro extends javax.swing.JFrame {
         Empresa generica = new Empresa(counter,txtEmpresa.getText(),txtPais.getText());
 
         //Parseo de dos variables de tipo texto a numericas
-        int serie = Integer.parseInt(txtSerie.getText());
+//        int serie = Integer.parseInt(txtSerie.getText());
         float precio = Float.parseFloat(txtPrecioU.getText());
         int cantidad = Integer.parseInt(txtCantidad.getText());
 
-        Electrodomestico[] stockProductos = generarProductos(serie,precio,generica,cantidad);
+        Electrodomestico[] stockProductos = generarProductos(precio,generica,cantidad);
         
         System.out.printf("El arreglo tiene longitud de %d, con la empresa %s y "
                 + "el arreglo es de tipo %s",stockProductos.length
                 ,generica.getNombre(),stockProductos[0].getTipo());
+
+        System.out.printf("El primer elemento tiene el n serie %d , el segundo %d",stockProductos[0].getnSerie(),stockProductos[1].getnSerie());
 
         mostrarProductos(stockProductos);
 
@@ -412,18 +416,19 @@ public class Registro extends javax.swing.JFrame {
 
     /**
      * Crea una arreglo de un tipo de electrodomestico.
-     * @param serie: numero de serie
      * @param precio: precio unitario
      * @param generica: datos de la empresa duena del producto
      * @param cantidad: cantidad de objetos que estaran dentro del arreglo
      * @return un arreglo de Electrodomesticos
      */
-    public Electrodomestico[] generarProductos(int serie, float precio, Empresa generica, int cantidad){
+    public Electrodomestico[] generarProductos(float precio, Empresa generica, int cantidad){
 
         Electrodomestico[] stockProductos = new Electrodomestico[cantidad];
 
         for (int i = 0; i < cantidad ; i++) {
-            Electrodomestico generico = new Electrodomestico(txtMarca.getText(),serie,txtTipo.getText(),precio,generica);
+            Random serie = new Random();
+            int serieParsed = Math.abs(serie.nextInt());
+            Electrodomestico generico = new Electrodomestico(txtMarca.getText(),serieParsed,txtTipo.getText(),precio,generica);
             stockProductos[i] = generico;
         }
         return stockProductos;
@@ -431,7 +436,7 @@ public class Registro extends javax.swing.JFrame {
 
     public void mostrarProductos(Electrodomestico[] arr){
         for (Electrodomestico e : arr) {
-            System.out.println(e);
+            System.out.println(" " + e);
         }
 
     }
