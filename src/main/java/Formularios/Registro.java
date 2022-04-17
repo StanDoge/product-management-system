@@ -387,7 +387,6 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTotalActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        //TODO: codigo de creacion de objetos -Admin- -Empresa- -Electrodomestico-
         Empresa generica = new Empresa(counter,txtEmpresa.getText(),txtPais.getText());
 
         //Parseo de dos variables de tipo texto a numericas
@@ -410,6 +409,15 @@ public class Registro extends javax.swing.JFrame {
     int counter = 1;
 
     // Metodos globales
+
+    /**
+     * Crea una arreglo de un tipo de electrodomestico.
+     * @param serie: numero de serie
+     * @param precio: precio unitario
+     * @param generica: datos de la empresa duena del producto
+     * @param cantidad: cantidad de objetos que estaran dentro del arreglo
+     * @return un arreglo de Electrodomesticos
+     */
     public Electrodomestico[] generarProductos(int serie, float precio, Empresa generica, int cantidad){
 
         Electrodomestico[] stockProductos = new Electrodomestico[cantidad];
@@ -427,9 +435,6 @@ public class Registro extends javax.swing.JFrame {
         }
 
     }
-
-
-
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
