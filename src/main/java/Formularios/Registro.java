@@ -426,9 +426,7 @@ public class Registro extends javax.swing.JFrame {
         Electrodomestico[] stockProductos = new Electrodomestico[cantidad];
 
         for (int i = 0; i < cantidad ; i++) {
-            Random serie = new Random();
-            int serieParsed = Math.abs(serie.nextInt());
-            Electrodomestico generico = new Electrodomestico(txtMarca.getText(),serieParsed,txtTipo.getText(),precio,generica);
+         Electrodomestico generico = new Electrodomestico(txtMarca.getText(),generarNSerie(),txtTipo.getText(),precio,generica);
             stockProductos[i] = generico;
         }
         return stockProductos;
@@ -439,6 +437,11 @@ public class Registro extends javax.swing.JFrame {
             System.out.println(" " + e);
         }
 
+    }
+
+    public int generarNSerie(){
+        Random serie = new Random();
+        return Math.abs(serie.nextInt());
     }
 
     public static void main(String args[]) {
