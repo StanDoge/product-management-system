@@ -392,12 +392,12 @@ public class Registro extends javax.swing.JFrame {
         Empresa generica = new Empresa(counter,txtEmpresa.getText(),txtPais.getText());
 
         //Parseo de dos variables de tipo texto a numericas
-//        int serie = Integer.parseInt(txtSerie.getText());
         float precio = Float.parseFloat(txtPrecioU.getText());
         int cantidad = Integer.parseInt(txtCantidad.getText());
 
         Electrodomestico[] stockProductos = generarProductos(precio,generica,cantidad);
-        
+
+        //Comprobacion que esta funcionando como deberia
         System.out.printf("El arreglo tiene longitud de %d, con la empresa %s y "
                 + "el arreglo es de tipo %s",stockProductos.length
                 ,generica.getNombre(),stockProductos[0].getTipo());
@@ -439,6 +439,11 @@ public class Registro extends javax.swing.JFrame {
 
     }
 
+    /**
+     * Creando un objeto random, se genera un numero random que puede ser negativo por lo que se obtiene su numero
+     * absoluto.
+     * @return un numero de serie de 6 digitos totalmente aleatorio
+     */
     public int generarNSerie(){
         Random serie = new Random();
         return Math.abs(serie.nextInt());
