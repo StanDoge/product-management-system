@@ -5,24 +5,37 @@ import Interfaces.Calculos;
 public class Almacen implements  Calculos{
     String nombre;
     String admin;
+    Entrega electrodomesticos;
     int codigoPostal;
     String direccion;
     String fechaRecibido;
     float costoAlmacenamiento;
 
+
     //Constructor
-    public Almacen(String nombre, String admin, int codigoPostal, String direccion, String fechaRecibido, float costoAlmacenamiento) {
+    public Almacen(String nombre, String admin, Entrega electrodomesticos, String direccion, float costoAlmacenamiento) {
         this.nombre = nombre;
         this.admin = admin;
-        this.codigoPostal = codigoPostal;
+        this.electrodomesticos = electrodomesticos;
+        //this.codigoPostal = f();
+        //todo: misma funcion ID
         this.direccion = direccion;
-        this.fechaRecibido = fechaRecibido;
+        //this.fechaRecibido = fechaRecibido;
+        //todo: intefaz de fechas
         this.costoAlmacenamiento = costoAlmacenamiento;
     }
 
     //Getters & Setters
     public String getNombre() {
         return nombre;
+    }
+
+    public Entrega getElectrodomesticos() {
+        return electrodomesticos;
+    }
+
+    public void setElectrodomesticos(Entrega electrodomesticos) {
+        this.electrodomesticos = electrodomesticos;
     }
 
     public void setNombre(String nombre) {
