@@ -1,6 +1,8 @@
 package Clases;
 
-public class Electrodomestico {
+import Interfaces.Calculos;
+
+public class Electrodomestico implements Calculos {
 
     final float IVA = 0.13f;
     String marca;
@@ -88,6 +90,8 @@ public class Electrodomestico {
      * Inicializa el valor del atributo precioTotal sumando el valor del precio unitario + el IVA de dicho precio
      * @author Stanley
      */
+
+    @Override
     public void calcularTotal(){
         this.precioTotal = this.precio + (this.precio * IVA);
     }

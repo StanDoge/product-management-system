@@ -421,6 +421,7 @@ public class Registro extends javax.swing.JFrame {
      * @param cantidad: cantidad de objetos que estaran dentro del arreglo
      * @return un arreglo de Electrodomesticos
      */
+
     public Electrodomestico[] generarProductos(float precio, Empresa generica, int cantidad){
 
         Electrodomestico[] stockProductos = new Electrodomestico[cantidad];
