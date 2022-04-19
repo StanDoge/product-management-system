@@ -1,9 +1,11 @@
 package Clases;
 
+import Interfaces.Fechas;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Entrega {
+public class Entrega implements Fechas {
 
     int entregaID;
     String fechaEnvio;
@@ -42,7 +44,7 @@ public class Entrega {
         this.cantidadElectrodomesticos = cantidadElectrodomesticos;
     }
 
-    //Metodos
+    //Operaciones 
 
     /**
      * Hace un "timestamp" pero solo con la fecha, no hora
@@ -50,7 +52,8 @@ public class Entrega {
      * que el original del objeto Date
      * @author Stanley
      */
-    private String generarFecha(){
+    @Override
+    public String generarFecha(){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd"); /* Necesario para simplificar la manera
         en que la fecha se muestra */
         Date today = new Date();
