@@ -2,9 +2,6 @@ package Clases;
 
 import Interfaces.Proceso;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class Entrega implements Proceso {
 
     int entregaID;
@@ -44,20 +41,5 @@ public class Entrega implements Proceso {
         this.cantidadElectrodomesticos = cantidadElectrodomesticos;
     }
 
-    //Operaciones
 
-    /**
-     * Hace un "timestamp" pero solo con la fecha, no hora
-     * @return fecha del momento que el metodo se ejecuta en tipo String y con un formato ISO, mucho mas legible
-     * que el original del objeto Date
-     * @author Stanley
-     */
-
-//    @Override
-//    public String generarFecha(){
-//        SimpleDateFormat sdf = new SimpleDateFormat("MM/yyyy/dd"); /* Necesario para simplificar la manera
-//        en que la fecha se muestra */
-//        Date today = new Date();
-//        return sdf.format(today);
-//    }
 }
