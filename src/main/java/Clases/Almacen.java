@@ -1,9 +1,8 @@
 package Clases;
 
-import Interfaces.Fecha;
-import Interfaces.Precio;
+import Interfaces.Proceso;
 
-public class Almacen implements Precio, Fecha {
+public class Almacen implements Proceso {
     String nombre;
     String admin;
     Entrega electrodomesticos;

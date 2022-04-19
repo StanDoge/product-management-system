@@ -1,11 +1,11 @@
 package Clases;
 
-import Interfaces.Fecha;
+import Interfaces.Proceso;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Entrega implements Fecha {
+public class Entrega implements Proceso {
 
     int entregaID;
     String fechaEnvio;
@@ -53,11 +53,11 @@ public class Entrega implements Fecha {
      * @author Stanley
      */
 
-    @Override
-    public String generarFecha(){
-        SimpleDateFormat sdf = new SimpleDateFormat("MM/yyyy/dd"); /* Necesario para simplificar la manera
-        en que la fecha se muestra */
-        Date today = new Date();
-        return sdf.format(today);
-    }
+//    @Override
+//    public String generarFecha(){
+//        SimpleDateFormat sdf = new SimpleDateFormat("MM/yyyy/dd"); /* Necesario para simplificar la manera
+//        en que la fecha se muestra */
+//        Date today = new Date();
+//        return sdf.format(today);
+//    }
 }
