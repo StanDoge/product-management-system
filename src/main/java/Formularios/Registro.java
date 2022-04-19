@@ -87,6 +87,11 @@ public class Registro extends javax.swing.JFrame {
                 txtNombrePActionPerformed(evt);
             }
         });
+        txtNombreP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombrePKeyTyped(evt);
+            }
+        });
 
         lblMarca.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblMarca.setText("Marca");
@@ -97,6 +102,13 @@ public class Registro extends javax.swing.JFrame {
         lblSerie.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblSerie.setText("N° de serie");
 
+        txtSerie.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSerieKeyTyped(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setText("Cantidad");
 
         lblPrecioU.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -408,6 +420,20 @@ public class Registro extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void txtNombrePKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombrePKeyTyped
+        // Validando txtNombreP para aceptar solo letras.
+        if(!Character.isLetter(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNombrePKeyTyped
+
+    private void txtSerieKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSerieKeyTyped
+        // Validando txtSerie para aceptar solo numeros.
+        if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtSerieKeyTyped
 
     // Variables globales
     int counter = 1;

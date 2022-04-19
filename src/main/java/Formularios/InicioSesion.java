@@ -120,6 +120,10 @@ public class InicioSesion extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Ingrese correctamente sus credenciales");
         }
         
+         //Validando campos vacios
+        if(txtUser.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null, "No dejar este campo vacio", "Error", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnAccesoActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
