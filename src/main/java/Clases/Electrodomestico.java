@@ -1,8 +1,8 @@
 package Clases;
 
-import Interfaces.Calculos;
+import Interfaces.Precio;
 
-public class Electrodomestico implements Calculos {
+public class Electrodomestico implements Precio {
 
     final float IVA = 0.13f;
     String marca;
