@@ -11,6 +11,14 @@ public class Almacen implements  Calculos{
     float costoAlmacenamiento;
 
     //Constructor
+    public Almacen(String nombre, String admin, int codigoPostal, String direccion, String fechaRecibido, float costoAlmacenamiento) {
+        this.nombre = nombre;
+        this.admin = admin;
+        this.codigoPostal = codigoPostal;
+        this.direccion = direccion;
+        this.fechaRecibido = fechaRecibido;
+        this.costoAlmacenamiento = costoAlmacenamiento;
+    }
 
     //Getters & Setters
     public String getNombre() {
@@ -59,5 +67,10 @@ public class Almacen implements  Calculos{
 
     public void setCostoAlmacenamiento(float costoAlmacenamiento) {
         this.costoAlmacenamiento = costoAlmacenamiento;
+    }
+
+    @Override
+    public void calcularTotal(){
+        //....
     }
 }
