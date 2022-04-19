@@ -44,7 +44,7 @@ public class Entrega implements Fechas {
         this.cantidadElectrodomesticos = cantidadElectrodomesticos;
     }
 
-    //Operaciones 
+    //Operaciones
 
     /**
      * Hace un "timestamp" pero solo con la fecha, no hora

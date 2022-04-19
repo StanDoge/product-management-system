@@ -1,8 +1,9 @@
 package Clases;
 
 import Interfaces.Calculos;
+import Interfaces.Fechas;
 
-public class Almacen implements  Calculos{
+public class Almacen implements  Calculos, Fechas {
     String nombre;
     String admin;
     Entrega electrodomesticos;
@@ -82,8 +83,15 @@ public class Almacen implements  Calculos{
         this.costoAlmacenamiento = costoAlmacenamiento;
     }
 
+    //Operaciones
+
     @Override
     public void calcularTotal(){
         //....
+    }
+
+    @Override
+    public String generarFecha(){
+        return  null;////
     }
 }
