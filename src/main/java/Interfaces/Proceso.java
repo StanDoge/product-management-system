@@ -17,6 +17,7 @@ public interface Proceso {
      * que el original del objeto Date
      * @author Stanley
      */
+
     default String generarFecha() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd"); /* Necesario para simplificar la manera
         en que la fecha se muestra */
