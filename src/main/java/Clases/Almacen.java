@@ -9,11 +9,10 @@ public class Almacen implements Proceso {
     int codigoPostal;
     String direccion;
     String fechaRecibido;
-    float costoAlmacenamiento;
 
 
     //Constructor
-    public Almacen(String nombre, String admin, Entrega electrodomesticos, String direccion, float costoAlmacenamiento) {
+    public Almacen(String nombre, String admin, Entrega electrodomesticos, String direccion) {
         this.nombre = nombre;
         this.admin = admin;
         this.electrodomesticos = electrodomesticos;
@@ -22,7 +21,6 @@ public class Almacen implements Proceso {
         this.direccion = direccion;
         //this.fechaRecibido = fechaRecibido;
         //todo: intefaz de fechas
-        this.costoAlmacenamiento = costoAlmacenamiento;
     }
 
     //Getters & Setters
@@ -74,23 +72,11 @@ public class Almacen implements Proceso {
         this.fechaRecibido = fechaRecibido;
     }
 
-    public float getCostoAlmacenamiento() {
-        return costoAlmacenamiento;
-    }
-
-    public void setCostoAlmacenamiento(float costoAlmacenamiento) {
-        this.costoAlmacenamiento = costoAlmacenamiento;
-    }
-
     //Operaciones
-
-    @Override
-    public void calcularTotal(){
-        //....
-    }
 
     @Override
     public String generarFecha(){
         return  null;////
+        //TODO: sumar dias
     }
 }

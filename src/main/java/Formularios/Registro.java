@@ -7,14 +7,13 @@ package Formularios;
 
 import Clases.Electrodomestico;
 import Clases.Empresa;
-import java.util.Random;
-import java.lang.Math;
+import Interfaces.Proceso;
 
 /**
  *
  * @author usuario
  */
-public class Registro extends javax.swing.JFrame {
+public class Registro extends javax.swing.JFrame implements Proceso {
 
     /**
      * Creates new form Registro
@@ -453,7 +452,7 @@ public class Registro extends javax.swing.JFrame {
         Electrodomestico[] stockProductos = new Electrodomestico[cantidad];
 
         for (int i = 0; i < cantidad ; i++) {
-         Electrodomestico generico = new Electrodomestico(txtMarca.getText(),generarNSerie(),txtTipo.getText(),precio,generica);
+         Electrodomestico generico = new Electrodomestico(txtMarca.getText(),generarID(),txtTipo.getText(),precio,generica);
             stockProductos[i] = generico;
         }
         return stockProductos;
@@ -464,16 +463,6 @@ public class Registro extends javax.swing.JFrame {
             System.out.println(" " + e);
         }
 
-    }
-
-    /**
-     * Creando un objeto random, se genera un numero random que puede ser negativo por lo que se obtiene su numero
-     * absoluto.
-     * @return un numero de serie de 6 digitos totalmente aleatorio
-     */
-    public int generarNSerie(){
-        Random serie = new Random();
-        return Math.abs(serie.nextInt());
     }
 
     public static void main(String args[]) {
