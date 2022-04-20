@@ -6,11 +6,6 @@ import java.util.Date;
 public interface Proceso {
     //Todos los metodos por defecto son public
 
-    default void calcularTotal() {
-       /* Vacia porque c/u de las clases la implementa usando sus metodos propios. Default para que no sea obligatorio
-         implementarla */
-    }
-
     /**
      * Hace un "timestamp" pero solo con la fecha, no hora
      * @return fecha del momento que el metodo se ejecuta en tipo String y con un formato ISO, mucho mas legible

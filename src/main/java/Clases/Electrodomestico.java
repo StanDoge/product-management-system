@@ -1,8 +1,7 @@
 package Clases;
 
-import Interfaces.Proceso;
 
-public class Electrodomestico implements Proceso {
+public class Electrodomestico {
 
     final float IVA = 0.13f;
     String marca;
@@ -91,7 +90,6 @@ public class Electrodomestico implements Proceso {
      * @author Stanley
      */
 
-    @Override
     public void calcularTotal(){
         this.precioTotal = this.precio + (this.precio * IVA);
     }
