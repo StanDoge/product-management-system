@@ -2,10 +2,12 @@ package Clases;
 
 import Interfaces.Proceso;
 
+import java.time.LocalDate;
+
 public class Entrega implements Proceso {
 
     int entregaID;
-    String fechaEnvio;
+    LocalDate fechaEnvio;
     int cantidadElectrodomesticos;
 
     //Contructor
@@ -24,11 +26,11 @@ public class Entrega implements Proceso {
         this.entregaID = entregaID;
     }
 
-    public String getFechaEnvio() {
+    public LocalDate getFechaEnvio() {
         return fechaEnvio;
     }
 
-    public void setFechaEnvio(String fechaEnvio) {
+    public void setFechaEnvio(LocalDate fechaEnvio) {
         this.fechaEnvio = fechaEnvio;
     }
 
@@ -40,4 +42,9 @@ public class Entrega implements Proceso {
         this.cantidadElectrodomesticos = cantidadElectrodomesticos;
     }
 
+    @Override
+    public LocalDate generarFecha() {
+        LocalDate today = LocalDate.now();
+        return today;
+    }
 }

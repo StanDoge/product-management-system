@@ -2,23 +2,25 @@ package Clases;
 
 import Interfaces.Proceso;
 
+import java.time.LocalDate;
+
 public class Almacen implements Proceso {
     String nombre;
     String admin;
     Entrega electrodomesticos;
     int codigoPostal;
     String direccion;
-    String fechaRecibido;
+    LocalDate fechaRecibido;
 
 
     //Constructor
-    public Almacen(String nombre, String admin, Entrega electrodomesticos, String direccion) {
+    public Almacen(String nombre, String admin, Entrega electrodomesticos, String direccion,LocalDate fechaEnvio) {
         this.nombre = nombre;
         this.admin = admin;
         this.electrodomesticos = electrodomesticos;
         this.codigoPostal = generarID();
         this.direccion = direccion;
-        //this.fechaRecibido = fechaRecibido;
+        this.fechaRecibido = generarFecha(fechaEnvio);
         //todo: intefaz de fechas
     }
 
@@ -63,18 +65,24 @@ public class Almacen implements Proceso {
         this.direccion = direccion;
     }
 
-    public String getFechaRecibido() {
+    public LocalDate getFechaRecibido() {
         return fechaRecibido;
     }
 
-    public void setFechaRecibido(String fechaRecibido) {
+    public void setFechaRecibido(LocalDate fechaRecibido) {
         this.fechaRecibido = fechaRecibido;
     }
 
+
     //Operaciones
-    @Override
-    public String generarFecha(){
-        return  null;////
-        //TODO: sumar dias
+
+    /**
+     * Suma 5 dias a la fecha de envio dada como argumento
+     * @param fecha , tipo LocalDate es la fecha generada en Entrega
+     * @return fecha de envio + 5 dias = fecha recibido
+     */
+    public LocalDate generarFecha(LocalDate fecha) {
+        return fecha.plusDays(5);
     }
+
 }

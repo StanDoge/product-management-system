@@ -16,7 +16,7 @@ public class PRN215_4_3 {
     public static void main(String[] args) {
 
         
-        Empresa generica = new Empresa(222,"Generica","Colombia");
+        Empresa generica = new Empresa("Generica","Colombia");
         Electrodomestico licuadora = new Electrodomestico("Generica Edition",12323,"Cocina", 23.83f,generica);
         Electrodomestico refri = new Electrodomestico("Yummy meals",132323,"Cocina", 100.40f,generica);
         Electrodomestico cocina  = new Electrodomestico("Uwu",13323,"Cocina", 89.99f,generica);
@@ -33,5 +33,7 @@ public class PRN215_4_3 {
         
         System.out.printf("La empresa %s es duena del stock de longitud %d , lleno de productos del tipo %s%n",
                 generica.getNombre(), primeraEntrega.getCantidadElectrodomesticos(), licuadora.getTipo());
+
+        System.out.printf("Fecha entrega: %s",primeraEntrega.getFechaEnvio());
     }
 }
