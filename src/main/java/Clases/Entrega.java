@@ -10,8 +10,7 @@ public class Entrega implements Proceso {
 
     //Contructor
     public Entrega(int entregaID, Electrodomestico[] cantidadElectrodomesticos) {
-        this.entregaID = entregaID;
-        //TODO: definir que algoritmo usa para generar id's
+        this.entregaID = generarID();
         this.fechaEnvio = generarFecha();
         this.cantidadElectrodomesticos = cantidadElectrodomesticos.length;
     }

@@ -16,8 +16,7 @@ public class Almacen implements Proceso {
         this.nombre = nombre;
         this.admin = admin;
         this.electrodomesticos = electrodomesticos;
-        //this.codigoPostal = f();
-        //todo: misma funcion ID
+        this.codigoPostal = generarID();
         this.direccion = direccion;
         //this.fechaRecibido = fechaRecibido;
         //todo: intefaz de fechas
