@@ -12,9 +12,12 @@ public class InicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel lblUser;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUser;
+    // End of variables declaration//GEN-END:variables
+
     /**
      * Creates new form InicioSesion
      */
+
     public InicioSesion() {
         initComponents();
     }
@@ -53,6 +56,7 @@ public class InicioSesion extends javax.swing.JFrame {
      * Formulario para autentificar e iniciar sesión para ingresar al sistema de Almacén.
      */
     @SuppressWarnings("unchecked")
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 

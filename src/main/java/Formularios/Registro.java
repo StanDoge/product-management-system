@@ -52,6 +52,8 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     private javax.swing.JTextField txtSerie;
     private javax.swing.JTextField txtTipo;
     private javax.swing.JTextField txtTotal;
+    // End of variables declaration//GEN-END:variables
+
     /**
      * Creates new form Registro
      */
