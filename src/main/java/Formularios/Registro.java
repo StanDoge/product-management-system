@@ -400,7 +400,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     }//GEN-LAST:event_txtTotalActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        Empresa generica = new Empresa(counter,txtEmpresa.getText(),txtPais.getText());
+        Empresa generica = new Empresa(txtEmpresa.getText(),txtPais.getText());
 
         //Parseo de dos variables de tipo texto a numericas
         float precio = Float.parseFloat(txtPrecioU.getText());
@@ -434,9 +434,6 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         }
     }//GEN-LAST:event_txtSerieKeyTyped
 
-    // Variables globales
-    int counter = 1;
-
     // Metodos globales
 
     /**
@@ -446,7 +443,6 @@ public class Registro extends javax.swing.JFrame implements Proceso {
      * @param cantidad: cantidad de objetos que estaran dentro del arreglo
      * @return un arreglo de Electrodomesticos
      */
-
     public Electrodomestico[] generarProductos(float precio, Empresa generica, int cantidad){
 
         Electrodomestico[] stockProductos = new Electrodomestico[cantidad];

@@ -72,7 +72,6 @@ public class Almacen implements Proceso {
     }
 
     //Operaciones
-
     @Override
     public String generarFecha(){
         return  null;////

@@ -9,7 +9,7 @@ public class Empresa implements Proceso {
     String pais;
     
     //Constructor
-    public Empresa(int empresaID, String nombre, String pais) {
+    public Empresa(String nombre, String pais) {
         this.empresaID = generarID();
         this.nombre = nombre;
         this.pais = pais;
