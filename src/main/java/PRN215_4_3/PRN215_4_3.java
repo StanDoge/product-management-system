@@ -21,7 +21,7 @@ public class PRN215_4_3 {
         Electrodomestico refri = new Electrodomestico("Yummy meals",132323,"Cocina", 100.40f,generica);
         Electrodomestico cocina  = new Electrodomestico("Uwu",13323,"Cocina", 89.99f,generica);
         Electrodomestico[] cantidadEjemplo = {licuadora,refri,cocina};
-        Entrega primeraEntrega = new Entrega(11,cantidadEjemplo);
+        Entrega primeraEntrega = new Entrega(cantidadEjemplo);
 
         /*
          * Usar String Interpolation hace mas legible  y facil al momento de imprimir data, propongo usarlo como

@@ -1,6 +1,8 @@
 package Clases;
 
-public class Empresa {
+import Interfaces.Proceso;
+
+public class Empresa implements Proceso {
 
     int empresaID;
     String nombre;
@@ -8,7 +10,7 @@ public class Empresa {
     
     //Constructor
     public Empresa(int empresaID, String nombre, String pais) {
-        this.empresaID = empresaID;
+        this.empresaID = generarID();
         this.nombre = nombre;
         this.pais = pais;
     }

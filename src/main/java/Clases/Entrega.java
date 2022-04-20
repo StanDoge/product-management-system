@@ -9,7 +9,7 @@ public class Entrega implements Proceso {
     int cantidadElectrodomesticos;
 
     //Contructor
-    public Entrega(int entregaID, Electrodomestico[] cantidadElectrodomesticos) {
+    public Entrega(Electrodomestico[] cantidadElectrodomesticos) {
         this.entregaID = generarID();
         this.fechaEnvio = generarFecha();
         this.cantidadElectrodomesticos = cantidadElectrodomesticos.length;
@@ -39,6 +39,5 @@ public class Entrega implements Proceso {
     public void setCantidadElectrodomesticos(int cantidadElectrodomesticos) {
         this.cantidadElectrodomesticos = cantidadElectrodomesticos;
     }
-
 
 }
