@@ -42,6 +42,12 @@ public class Entrega implements Proceso {
         this.cantidadElectrodomesticos = cantidadElectrodomesticos;
     }
 
+    /**
+     * Hace un "timestamp" pero solo con la fecha, no hora
+     *
+     * @return fecha del momento que el metodo se ejecuta en tipo String y con un formato ISO, mucho mas legible
+     * que el original del objeto Date
+     */
     @Override
     public LocalDate generarFecha() {
         LocalDate today = LocalDate.now();
