@@ -172,7 +172,7 @@ public class InicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAccesoActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
-        // TODO add your handling code here:
+        // Codigo para boton Cerrar
         System.exit(0);
     }//GEN-LAST:event_btnCerrarActionPerformed
     // End of variables declaration                   
