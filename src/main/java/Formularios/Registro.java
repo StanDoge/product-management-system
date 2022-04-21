@@ -8,6 +8,7 @@ package Formularios;
 import Clases.Electrodomestico;
 import Clases.Empresa;
 import Interfaces.Proceso;
+import com.sun.glass.events.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -188,6 +189,12 @@ public class Registro extends javax.swing.JFrame implements Proceso {
 
         lblPrecioU.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblPrecioU.setText("Precio unitario");
+
+        txtPrecioU.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPrecioUKeyTyped(evt);
+            }
+        });
 
         lblTotal.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblTotal.setText("Total");
@@ -532,9 +539,30 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         if(Character.isLetter(validar)){
             getToolkit().beep();
             evt.consume();
-            JOptionPane.showMessageDialog(rootPane, "Ingrese cantidad (en numeros)");
+            JOptionPane.showMessageDialog(rootPane, "Solo ingrese numeros");
         }
     }//GEN-LAST:event_txtCantidadKeyTyped
+
+    private void txtPrecioUKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioUKeyTyped
+        // Validando entrada de precio con decimales para numeros reales positivos
+        char tecla;
+        tecla=evt.getKeyChar();
+        String cod=txtPrecioU.getText();
+        int punto=cod.indexOf(".")+1;//obtiene lo capturado y devuelve dentro de String
+        //
+        if(punto==0){
+            if(!Character.isDigit(tecla)&& tecla!=KeyEvent.VK_BACKSPACE&& tecla!=KeyEvent.VK_PERIOD){
+                evt.consume();//permite introducir caracteres numericos
+                getToolkit().beep();//emite sonido de ¡Atención!
+            }
+        }
+        else{
+            if(!Character.isDigit(tecla)&& tecla!=KeyEvent.VK_BACKSPACE){
+                evt.consume();
+                getToolkit().beep();//emite sonido de ¡Atención!
+            }
+        }
+    }//GEN-LAST:event_txtPrecioUKeyTyped
 
     /**
      * Crea una arreglo de un tipo de electrodomestico.

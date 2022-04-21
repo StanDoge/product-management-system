@@ -254,6 +254,9 @@
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="txtPrecio"/>
       </AccessibilityProperties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPrecioUKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblTotal">
       <Properties>
