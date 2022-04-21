@@ -211,6 +211,9 @@
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="txtTipo"/>
       </AccessibilityProperties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTipoKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblSerie">
       <Properties>
@@ -503,6 +506,9 @@
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="txtCantidad"/>
       </AccessibilityProperties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCantidadKeyTyped"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

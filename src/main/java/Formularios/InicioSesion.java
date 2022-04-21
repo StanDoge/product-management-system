@@ -162,8 +162,12 @@ public class InicioSesion extends javax.swing.JFrame {
         }
 
         //Validando campos vacios
-        if (txtUser.getText().trim().isEmpty()) {
+        if (txtUser.getText().trim().isEmpty() || txtPassword.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "No dejar este campo vacio", "Error", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            Registro frmRegistro = new Registro();
+            frmRegistro.setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_btnAccesoActionPerformed
 
@@ -171,5 +175,5 @@ public class InicioSesion extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnCerrarActionPerformed
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
