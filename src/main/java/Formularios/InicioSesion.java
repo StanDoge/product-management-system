@@ -152,7 +152,9 @@ public class InicioSesion extends javax.swing.JFrame {
         pwd = txtPassword.getText();
         // condicional if
         // Se usaran dos credenciales para usuario y Administrador
-        if (user.equals("user") && pwd.equals("123")) {
+        // Para usuario_usuario: "user" y usuario_password: sistema
+        // Para administrador_usuario: "admin" y administrador_password: PRN2
+        if (user.equals("user") && pwd.equals("sistema")||user.equals("admin")&&pwd.equals("PRN2")) {
             // Abre formulario de Registro
             Registro sistema = new Registro();
             sistema.setVisible(true);
