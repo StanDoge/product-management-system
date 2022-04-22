@@ -1,5 +1,6 @@
 package Formularios;
 
+import Clases.Sesion;
 import javax.swing.*;
 
 public class InicioSesion extends javax.swing.JFrame {
@@ -146,31 +147,21 @@ public class InicioSesion extends javax.swing.JFrame {
 
     private void btnAccesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccesoActionPerformed
         // Declarar variables
-        String user, pwd;
+        String user, pwd, admin, pwdA;
         // obtenemos la entrada por teclado mediante las textBox
         user = txtUser.getText();
         pwd = txtPassword.getText();
-        // condicional if
-        // Se usaran dos credenciales para usuario y Administrador
-        // Para usuario_usuario: "user" y usuario_password: sistema
-        // Para administrador_usuario: "admin" y administrador_password: PRN2
-        if (user.equals("user") && pwd.equals("sistema")||user.equals("admin")&&pwd.equals("PRN2")) {
-            // Abre formulario de Registro
-            Registro sistema = new Registro();
-            sistema.setVisible(true);
-            this.setVisible(false);
-        } else {
-            JOptionPane.showMessageDialog(null, "Ingrese correctamente sus credenciales");
-        }
-
+        admin = txtUser.getText();
+        pwdA = txtPassword.getText();
+        Sesion.SesionStatic estatica = new Sesion.SesionStatic();
         //Validando campos vacios
-        if (txtUser.getText().trim().isEmpty() || txtPassword.getText().isEmpty()) {
+        if (txtUser.getText().trim().isEmpty() || txtPassword.getText().isEmpty()) 
+        {
             JOptionPane.showMessageDialog(null, "No dejar este campo vacio", "Error", JOptionPane.INFORMATION_MESSAGE);
-        }else{
-            Registro frmRegistro = new Registro();
-            frmRegistro.setVisible(true);
-            this.dispose();
         }
+        //Validación de credenciales correctas
+        if (!estatica.iniciarSesion(user, pwd, admin, pwdA)) {}
+        else{this.dispose();}  
     }//GEN-LAST:event_btnAccesoActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
