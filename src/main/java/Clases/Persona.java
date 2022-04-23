@@ -24,7 +24,7 @@ public abstract class Persona implements Proceso
         this.usuario = usuario;
         this.contraseña = contraseña;
     }
-    
+
     //Getters & Setters
     public String getUsuario() {
         return usuario;
