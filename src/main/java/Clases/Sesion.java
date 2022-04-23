@@ -3,11 +3,8 @@ package Clases;
 import Formularios.InicioSesion;
 import Formularios.Registro;
 import javax.swing.JOptionPane;
-/**
- *
- * @author César
- */
-public class Sesion 
+
+public class Sesion
 {
     String usuario;
     String pswUsuario;
