@@ -1,6 +1,9 @@
 package Clases;
 
-public class Electrodomestico {
+
+import Interfaces.Proceso;
+
+public class Electrodomestico implements Proceso {
 
     final float IVA = 0.13f;
     String marca;
@@ -14,8 +17,7 @@ public class Electrodomestico {
     //Constructor
     public Electrodomestico(String marca, int nSerie, String tipo, float precio, Empresa propietario) {
         this.marca = marca;
-        this.nSerie = nSerie;
-        //TODO: algoritmo para autogenerar numeros de serie
+        this.nSerie = generarID();
         this.tipo = tipo;
         this.precio = precio;
         this.propietario = propietario;
@@ -88,6 +90,7 @@ public class Electrodomestico {
      * Inicializa el valor del atributo precioTotal sumando el valor del precio unitario + el IVA de dicho precio
      * @author Stanley
      */
+
     public void calcularTotal(){
         this.precioTotal = this.precio + (this.precio * IVA);
     }

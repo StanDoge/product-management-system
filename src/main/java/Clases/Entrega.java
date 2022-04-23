@@ -1,19 +1,19 @@
 package Clases;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import Interfaces.Proceso;
 
-public class Entrega {
+import java.time.LocalDate;
+
+public class Entrega implements Proceso {
 
     int entregaID;
-    String fechaEnvio;
+    LocalDate fechaEnvio;
     int cantidadElectrodomesticos;
 
     //Contructor
-    public Entrega(int entregaID, Electrodomestico[] cantidadElectrodomesticos) {
-        this.entregaID = entregaID;
-        //TODO: definir que algoritmo usa para generar id's
-        this.fechaEnvio = simplificadorFecha();
+    public Entrega(Electrodomestico[] cantidadElectrodomesticos) {
+        this.entregaID = generarID();
+        this.fechaEnvio = generarFecha();
         this.cantidadElectrodomesticos = cantidadElectrodomesticos.length;
     }
 
@@ -26,11 +26,11 @@ public class Entrega {
         this.entregaID = entregaID;
     }
 
-    public String getFechaEnvio() {
+    public LocalDate getFechaEnvio() {
         return fechaEnvio;
     }
 
-    public void setFechaEnvio(String fechaEnvio) {
+    public void setFechaEnvio(LocalDate fechaEnvio) {
         this.fechaEnvio = fechaEnvio;
     }
 
@@ -42,17 +42,15 @@ public class Entrega {
         this.cantidadElectrodomesticos = cantidadElectrodomesticos;
     }
 
-    //Metodos
-
     /**
+     * Hace un "timestamp" pero solo con la fecha, no hora
+     *
      * @return fecha del momento que el metodo se ejecuta en tipo String y con un formato ISO, mucho mas legible
      * que el original del objeto Date
-     * @author Stanley
      */
-    private String simplificadorFecha(){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd"); /* Necesario para simplificar la manera
-        en que la fecha se muestra */
-        Date today = new Date();
-        return sdf.format(today);
+    @Override
+    public LocalDate generarFecha() {
+        LocalDate today = LocalDate.now();
+        return today;
     }
 }

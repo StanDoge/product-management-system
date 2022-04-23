@@ -1,14 +1,16 @@
 package Clases;
 
-public class Empresa {
+import Interfaces.Proceso;
+
+public class Empresa implements Proceso {
 
     int empresaID;
     String nombre;
     String pais;
     
     //Constructor
-    public Empresa(int empresaID, String nombre, String pais) {
-        this.empresaID = empresaID;
+    public Empresa(String nombre, String pais) {
+        this.empresaID = generarID();
         this.nombre = nombre;
         this.pais = pais;
     }
