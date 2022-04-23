@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Clases;
 
 import Formularios.InicioSesion;
@@ -18,7 +13,8 @@ public class Sesion
     String pswUsuario;
     String admin;
     String pswAdmin;
-    
+
+    //Que es esto?
     public Sesion(){}
 
     public Sesion(String usuario, String pswUsuario, String admin, String pswAdmin) 
@@ -65,11 +61,7 @@ public class Sesion
     {
         public boolean iniciarSesion(String us, String pswUs, String adm, String pswAdm)
         {
-        // condicional if
-        // Se usaran dos credenciales para usuario y Administrador
-        // Para usuario_usuario: "user" y usuario_password: sistema
-        // Para administrador_usuario: "admin" y administrador_password: PRN2
-            if (us.equals("user") && pswUs.equals("sistema")||adm.equals("admin")&& pswAdm.equals("PRN2")) 
+            if (us.equals("user") && pswUs.equals("sistema")||adm.equals("admin")&& pswAdm.equals("PRN2"))
             {
                 Registro sistema = new Registro();
                 sistema.setVisible(true);

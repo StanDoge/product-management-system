@@ -90,7 +90,6 @@ public class Electrodomestico implements Proceso {
      * Inicializa el valor del atributo precioTotal sumando el valor del precio unitario + el IVA de dicho precio
      * @author Stanley
      */
-
     public void calcularTotal(){
         this.precioTotal = this.precio + (this.precio * IVA);
     }

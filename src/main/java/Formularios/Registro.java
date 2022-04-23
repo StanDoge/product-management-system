@@ -586,7 +586,6 @@ public class Registro extends javax.swing.JFrame implements Proceso {
 
     /**
      * Crea una arreglo de un tipo de electrodomestico.
-     *
      * @param precio:   precio unitario
      * @param generica: datos de la empresa duena del producto
      * @param cantidad: cantidad de objetos que estaran dentro del arreglo

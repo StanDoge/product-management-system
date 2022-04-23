@@ -146,26 +146,29 @@ public class InicioSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAccesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccesoActionPerformed
-        // Declarar variables
         String user, pwd, admin, pwdA;
+
         // obtenemos la entrada por teclado mediante las textBox
         user = txtUser.getText();
         pwd = txtPassword.getText();
         admin = txtUser.getText();
         pwdA = txtPassword.getText();
+        //Como funciona esto?
         Sesion.SesionStatic estatica = new Sesion.SesionStatic();
+
         //Validando campos vacios
         if (txtUser.getText().trim().isEmpty() || txtPassword.getText().isEmpty()) 
         {
             JOptionPane.showMessageDialog(null, "No dejar este campo vacio", "Error", JOptionPane.INFORMATION_MESSAGE);
         }
+
         //Validación de credenciales correctas
         if (!estatica.iniciarSesion(user, pwd, admin, pwdA)) {}
-        else{this.dispose();}  
+        else{this.dispose();}
+
     }//GEN-LAST:event_btnAccesoActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
-        // Codigo para boton Cerrar
         System.exit(0);
     }//GEN-LAST:event_btnCerrarActionPerformed
     // End of variables declaration                   

@@ -15,7 +15,6 @@ public class Empresa implements Proceso {
         this.pais = pais;
     }
     
-
    //Getters & Setters
     public int getEmpresaID() {
         return empresaID;
