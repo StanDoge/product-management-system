@@ -482,6 +482,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         txtCantidad.getAccessibleContext().setAccessibleName("txtCantidad");
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
