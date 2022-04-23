@@ -17,6 +17,7 @@ public class Sesion
     //Que es esto?
     public Sesion(){}
 
+    //Constructor
     public Sesion(String usuario, String pswUsuario, String admin, String pswAdmin) 
     {
         this.usuario = usuario;
@@ -25,6 +26,7 @@ public class Sesion
         this.pswAdmin = pswAdmin;
     }
 
+    //Getters & Setters
     public String getUsuario() {
         return usuario;
     }
@@ -56,9 +58,11 @@ public class Sesion
     public void setPswAdmin(String pswAdmin) {
         this.pswAdmin = pswAdmin;
     }
-    
+
+    //Esta clase no esta contemplada en el DC, no podemos estar agregando extras
     public static class SesionStatic
     {
+        //Este deberia ser un metodo de la clase Sesion directamente; no de Sesion > SesionStatic
         public boolean iniciarSesion(String us, String pswUs, String adm, String pswAdm)
         {
             if (us.equals("user") && pswUs.equals("sistema")||adm.equals("admin")&& pswAdm.equals("PRN2"))
