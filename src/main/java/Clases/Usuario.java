@@ -5,6 +5,8 @@
  */
 package Clases;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author César
@@ -21,9 +23,5 @@ public class Usuario extends Persona
         //...
     }
     
-    public void registrarProducto()
-    {
-        //...
-    }
 }
 

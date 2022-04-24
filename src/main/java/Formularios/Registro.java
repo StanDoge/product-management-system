@@ -10,6 +10,7 @@ import Clases.Empresa;
 import Interfaces.Proceso;
 import com.sun.glass.events.KeyEvent;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  * @author usuario
@@ -231,9 +232,10 @@ public class Registro extends javax.swing.JFrame implements Proceso {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombre ", "Marca ", "Precio unitario ", "Pais"
             }
         ));
+
         jScrollPane1.setViewportView(jTable1);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -518,6 +520,8 @@ public class Registro extends javax.swing.JFrame implements Proceso {
 
         Electrodomestico[] stockProductos = generarProductos(precio, generica, cantidad);
 
+        registrarProducto(stockProductos);
+
         //Comprobacion que esta funcionando como deberia
         System.out.printf("El arreglo tiene longitud de %d, con la empresa %s y "
                         + "el arreglo es de tipo %s", stockProductos.length
@@ -586,15 +590,6 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     }//GEN-LAST:event_txtPrecioUKeyTyped
 
 
-    public  void agregarProducto (){
-       try {
-           
-       }
-       catch (Exception e) {
-
-       }
-    }
-
     /**
      * Crea una arreglo de un tipo de electrodomestico.
      * @param precio:   precio unitario
@@ -611,6 +606,21 @@ public class Registro extends javax.swing.JFrame implements Proceso {
             stockProductos[i] = generico;
         }
         return stockProductos;
+    }
+
+    public void registrarProducto(Electrodomestico[] e)
+    {
+        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+
+        Electrodomestico p = null;
+        e[0] = p;
+
+        float precio = p.getPrecio();
+        String[] fila = new String[2];
+        fila[1] = p.getMarca();
+        fila[2] = Float.toString(precio);
+
+        modelo.addRow(fila);
     }
 
     public void mostrarProductos(Electrodomestico[] arr) {
