@@ -158,7 +158,8 @@ public class InicioSesion extends javax.swing.JFrame {
         //Validando campos vacios
         if (txtUser.getText().trim().isEmpty() || txtPassword.getText().isEmpty()) 
         {
-            JOptionPane.showMessageDialog(null, "No dejar este campo vacio", "Error", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No dejar este campo vacio", "Error",
+                    JOptionPane.INFORMATION_MESSAGE);
         }
 
         //Validación de credenciales correctas

@@ -585,6 +585,16 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         }
     }//GEN-LAST:event_txtPrecioUKeyTyped
 
+
+    public  void agregarProducto (){
+       try {
+           
+       }
+       catch (Exception e) {
+
+       }
+    }
+
     /**
      * Crea una arreglo de un tipo de electrodomestico.
      * @param precio:   precio unitario
