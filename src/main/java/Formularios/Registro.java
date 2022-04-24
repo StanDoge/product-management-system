@@ -522,15 +522,6 @@ public class Registro extends javax.swing.JFrame implements Proceso {
 
         registrarProducto(stockProductos);
 
-        //Comprobacion que esta funcionando como deberia
-        System.out.printf("El arreglo tiene longitud de %d, con la empresa %s y "
-                        + "el arreglo es de tipo %s", stockProductos.length
-                , generica.getNombre(), stockProductos[0].getTipo());
-
-        System.out.printf("El primer elemento tiene el n serie %d , el segundo %d", stockProductos[0].getnSerie(), stockProductos[1].getnSerie());
-
-        mostrarProductos(stockProductos);
-
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
@@ -608,25 +599,25 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         return stockProductos;
     }
 
-    public void registrarProducto(Electrodomestico[] e)
+    /**
+     * Envio desde el arreglo de productos hasta la tabla del formulario
+     * @param e arreglo de electrodomesticos para obtener los valores de sus atributos
+     */
+    public void registrarProducto(Electrodomestico[] e, Empresa em)
     {
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
 
         Electrodomestico p = e[0];
 
-        String[] fila = new String[3];
-        fila[0] = p.getMarca();
-        fila[1] = txtPrecioU.getText();
-        fila[2] = txtPais.getText();
+        String[] fila = new String[4];
+
+        fila[0] = p.getNombre();
+        fila[1] = p.getMarca();
+        fila[2] = em.getNombre();
+        fila[3] = em.getPais();
 
         modelo.addRow(fila);
     }
 
-    public void mostrarProductos(Electrodomestico[] arr) {
-        for (Electrodomestico e : arr) {
-            System.out.println(" " + e);
-        }
-
-    }
-    // End of variables declaration                   
+    // End of variables declaration
 }
