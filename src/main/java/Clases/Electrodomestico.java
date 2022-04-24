@@ -5,6 +5,8 @@ import Interfaces.Proceso;
 
 public class Electrodomestico implements Proceso {
 
+    
+    String nombre;
     final float IVA = 0.13f;
     String marca;
     int nSerie;
@@ -15,7 +17,8 @@ public class Electrodomestico implements Proceso {
     Empresa propietario;
 
     //Constructor
-    public Electrodomestico(String marca, int nSerie, String tipo, float precio, Empresa propietario) {
+    public Electrodomestico(String nombre, String marca, int nSerie, String tipo, float precio, Empresa propietario) {
+        this.nombre = nombre;
         this.marca = marca;
         this.nSerie = generarID();
         this.tipo = tipo;
@@ -24,6 +27,14 @@ public class Electrodomestico implements Proceso {
     }
 
     //Getters & Setters
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
     public String getMarca() {
         return marca;
     }
