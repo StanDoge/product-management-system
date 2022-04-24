@@ -612,13 +612,10 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     {
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
 
-        Electrodomestico p = null;
-        e[0] = p;
+        Electrodomestico p = e[0];
 
-        float precio = p.getPrecio();
-        String[] fila = new String[2];
-        fila[1] = p.getMarca();
-        fila[2] = Float.toString(precio);
+        String[] fila = new String[1];
+        fila[0] = p.getMarca();
 
         modelo.addRow(fila);
     }
