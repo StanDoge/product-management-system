@@ -614,8 +614,10 @@ public class Registro extends javax.swing.JFrame implements Proceso {
 
         Electrodomestico p = e[0];
 
-        String[] fila = new String[1];
+        String[] fila = new String[3];
         fila[0] = p.getMarca();
+        fila[1] = txtPrecioU.getText();
+        fila[2] = txtPais.getText();
 
         modelo.addRow(fila);
     }
