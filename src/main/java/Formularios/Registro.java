@@ -520,7 +520,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
 
         Electrodomestico[] stockProductos = generarProductos(precio, generica, cantidad);
 
-        registrarProducto(stockProductos);
+        registrarProducto(stockProductos, generica);
 
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
@@ -607,16 +607,18 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     {
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
 
-        Electrodomestico p = e[0];
+        for (Electrodomestico p : e){
 
-        String[] fila = new String[4];
+            String[] fila = new String[4];
 
-        fila[0] = p.getNombre();
-        fila[1] = p.getMarca();
-        fila[2] = em.getNombre();
-        fila[3] = em.getPais();
+            fila[0] = p.getNombre();
+            fila[1] = p.getMarca();
+            fila[2] = em.getNombre();
+            fila[3] = em.getPais();
 
-        modelo.addRow(fila);
+            modelo.addRow(fila);
+
+        }
     }
 
     // End of variables declaration
