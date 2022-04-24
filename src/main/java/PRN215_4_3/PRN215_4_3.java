@@ -17,9 +17,9 @@ public class PRN215_4_3 {
 
         
         Empresa generica = new Empresa("Generica","Colombia");
-        Electrodomestico licuadora = new Electrodomestico("Generica Edition",12323,"Cocina", 23.83f,generica);
-        Electrodomestico refri = new Electrodomestico("Yummy meals",132323,"Cocina", 100.40f,generica);
-        Electrodomestico cocina  = new Electrodomestico("Uwu",13323,"Cocina", 89.99f,generica);
+        Electrodomestico licuadora = new Electrodomestico("Doralicua","Generica Edition",12323,"Cocina", 23.83f,generica);
+        Electrodomestico refri = new Electrodomestico("Frire","Yummy meals",132323,"Cocina", 100.40f,generica);
+        Electrodomestico cocina  = new Electrodomestico("Cinaco","Uwu",13323,"Cocina", 89.99f,generica);
         Electrodomestico[] cantidadEjemplo = {licuadora,refri,cocina};
         Entrega primeraEntrega = new Entrega(cantidadEjemplo);
 
