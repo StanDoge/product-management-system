@@ -148,6 +148,11 @@ public class Registro extends javax.swing.JFrame implements Proceso {
 
         btnSalir.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         lblInfoProducto.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         lblInfoProducto.setText("Información del producto");
@@ -232,10 +237,9 @@ public class Registro extends javax.swing.JFrame implements Proceso {
                 {null, null, null, null}
             },
             new String [] {
-                "Nombre ", "Marca ", "Precio unitario ", "Pais"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-
         jScrollPane1.setViewportView(jTable1);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -512,6 +516,11 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     }//GEN-LAST:event_txtTotalActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        if(txtAdmin.getText().isEmpty() || txtAlmacen.getText().isEmpty() || txtCantidad.getText().isEmpty() || txtDireccion.getText().isEmpty() || txtEmpresa.getText().isEmpty() || txtMarca.getText().isEmpty() || txtNombreP.getText().isEmpty() || txtPais.getText().isEmpty() || txtPrecioU.getText().isEmpty() || txtSerie.getText().isEmpty() || txtTipo.getText().isEmpty() || txtTotal.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "No dejar este campo vacio", "Error", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
         Empresa generica = new Empresa(txtEmpresa.getText(), txtPais.getText());
 
         //Parseo de dos variables de tipo texto a numericas
@@ -579,6 +588,10 @@ public class Registro extends javax.swing.JFrame implements Proceso {
             }
         }
     }//GEN-LAST:event_txtPrecioUKeyTyped
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
 
 
     /**
