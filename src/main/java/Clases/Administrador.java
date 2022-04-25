@@ -5,17 +5,18 @@
  */
 package Clases;
 
+import Interfaces.Proceso;
+
 /**
  *
  * @author César
  */
-public class Administrador extends Persona
+public class Administrador extends Persona implements Proceso
 {
-    public Administrador(String usuario, String contraseña) 
-    {
-        super(usuario, contraseña);
+    public Administrador(String usuario) {
+        this.ID = generarID();
     }
-    
+
     public void modficarRegistro()
     {
         //...

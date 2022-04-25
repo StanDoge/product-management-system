@@ -1,26 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Clases;
 
 import Formularios.InicioSesion;
 import Formularios.Registro;
 import javax.swing.JOptionPane;
-/**
- *
- * @author César
- */
-public class Sesion 
+
+public class Sesion
 {
     String usuario;
     String pswUsuario;
     String admin;
     String pswAdmin;
-    
-    public Sesion(){}
 
+    //Constructor
     public Sesion(String usuario, String pswUsuario, String admin, String pswAdmin) 
     {
         this.usuario = usuario;
@@ -29,58 +20,59 @@ public class Sesion
         this.pswAdmin = pswAdmin;
     }
 
-    public String getUsuario() {
+    //Getters & Setters
+    public String getUsuario() 
+    {
         return usuario;
     }
 
-    public void setUsuario(String usuario) {
+    public void setUsuario(String usuario) 
+    {
         this.usuario = usuario;
     }
 
-    public String getPswUsuario() {
+    public String getPswUsuario() 
+    {
         return pswUsuario;
     }
 
-    public void setPswUsuario(String pswUsuario) {
+    public void setPswUsuario(String pswUsuario) 
+    {
         this.pswUsuario = pswUsuario;
     }
 
-    public String getAdmin() {
+    public String getAdmin() 
+    {
         return admin;
     }
 
-    public void setAdmin(String admin) {
+    public void setAdmin(String admin) 
+    {
         this.admin = admin;
     }
 
-    public String getPswAdmin() {
+    public String getPswAdmin() 
+    {
         return pswAdmin;
     }
 
-    public void setPswAdmin(String pswAdmin) {
+    public void setPswAdmin(String pswAdmin) 
+    {
         this.pswAdmin = pswAdmin;
     }
     
-    public static class SesionStatic
+    public static boolean iniciarSesion(String us, String pswUs, String adm, String pswAdm)
     {
-        public boolean iniciarSesion(String us, String pswUs, String adm, String pswAdm)
+        if (us.equals("user") && pswUs.equals("sistema")||adm.equals("admin")&& pswAdm.equals("PRN2"))
         {
-        // condicional if
-        // Se usaran dos credenciales para usuario y Administrador
-        // Para usuario_usuario: "user" y usuario_password: sistema
-        // Para administrador_usuario: "admin" y administrador_password: PRN2
-            if (us.equals("user") && pswUs.equals("sistema")||adm.equals("admin")&& pswAdm.equals("PRN2")) 
-            {
-                Registro sistema = new Registro();
-                sistema.setVisible(true);
-                return true;
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "Ingrese correctamente sus credenciales");
-                return false;
-            }
+            Registro sistema = new Registro();
+            sistema.setVisible(true);
+            return true;
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Ingrese correctamente sus credenciales");
+            return false;
         }
     }
 }
-

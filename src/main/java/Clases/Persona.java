@@ -5,18 +5,32 @@
  */
 package Clases;
 
+import Interfaces.Proceso;
+
 /**
  *
  * @author César
  */
-public abstract class Persona 
+public abstract class Persona
 {
-    String usuario;
-    String contraseña;
-    
-    public Persona(String usuario, String contraseña)
-    {
+    protected int ID;
+    protected String usuario;
+    protected String contraseña;
+
+    //Getters & Setters
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
         this.usuario = usuario;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
 }
