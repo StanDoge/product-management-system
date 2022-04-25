@@ -14,13 +14,13 @@ public class Almacen implements Proceso {
 
 
     //Constructor
-    public Almacen(String nombre, Administrador admin, Entrega electrodomesticos, String direccion,LocalDate fechaEnvio) {
+    public Almacen(String nombre, Administrador admin, Entrega electrodomesticos, String direccion) {
         this.nombre = nombre;
         this.admin = admin;
         this.electrodomesticos = electrodomesticos;
         this.codigoPostal = generarID();
         this.direccion = direccion;
-        this.fechaRecibido = generarFecha(fechaEnvio);
+        this.fechaRecibido = generarFecha(electrodomesticos.getFechaEnvio());
         //todo: intefaz de fechas
     }
 
