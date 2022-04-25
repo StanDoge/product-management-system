@@ -11,7 +11,7 @@ import Interfaces.Proceso;
  *
  * @author César
  */
-public abstract class Persona implements Proceso
+public abstract class Persona
 {
     int ID;
     String usuario;
@@ -20,7 +20,6 @@ public abstract class Persona implements Proceso
     //Constructor
     public Persona(String usuario, String contraseña)
     {
-        this.ID = generarID();
         this.usuario = usuario;
         this.contraseña = contraseña;
     }
