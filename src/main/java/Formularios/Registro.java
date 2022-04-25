@@ -618,11 +618,6 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         return stockProductos;
     }
 
-    /**
-     * Envio desde el arreglo de productos hasta la tabla del formulario
-     * @param e arreglo de electrodomesticos para obtener los valores de sus atributos
-     */
-
 //    public void registrarProducto(Electrodomestico[] e, Empresa em)
 //    {
 //        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
