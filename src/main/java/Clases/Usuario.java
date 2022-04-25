@@ -5,17 +5,20 @@
  */
 package Clases;
 
+import Interfaces.Proceso;
+
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author César
  */
-public class Usuario extends Persona
+public class Usuario extends Persona implements Proceso
 {
     public Usuario(String usuario, String contraseña) 
     {
         super(usuario, contraseña);
+        this.ID = generarID();
     }
     
     public void consultarProducto()
