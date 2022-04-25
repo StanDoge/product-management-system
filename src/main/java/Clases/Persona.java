@@ -17,12 +17,6 @@ public abstract class Persona
     String usuario;
     String contraseña;
 
-    //Constructor
-    public Persona(String usuario, String contraseña)
-    {
-        this.usuario = usuario;
-        this.contraseña = contraseña;
-    }
 
     //Getters & Setters
     public String getUsuario() {

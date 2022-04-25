@@ -16,9 +16,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Usuario extends Persona implements Proceso
 {
-    public Usuario(String usuario, String contraseña) 
+    public Usuario(String usuario)
     {
-        super(usuario, contraseña);
         this.ID = generarID();
     }
     
