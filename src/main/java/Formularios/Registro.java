@@ -5,8 +5,10 @@
  */
 package Formularios;
 
+import Clases.Administrador;
 import Clases.Electrodomestico;
 import Clases.Empresa;
+import Clases.Usuario;
 import Interfaces.Proceso;
 import com.sun.glass.events.KeyEvent;
 import javax.swing.JOptionPane;
@@ -520,6 +522,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         }
         
         Empresa generica = new Empresa(txtEmpresa.getText(), txtPais.getText());
+//        Administrador admin = new Administrador(txtAdmin.getText());
 
         //Parseo de dos variables de tipo texto a numericas
         float precio = Float.parseFloat(txtPrecioU.getText());
@@ -527,7 +530,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
 
         Electrodomestico[] stockProductos = generarProductos(precio, generica, cantidad);
 
-        registrarProducto(stockProductos, generica);
+//        Usuario.registrarProducto(stockProductos, generica);
 
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
@@ -615,29 +618,29 @@ public class Registro extends javax.swing.JFrame implements Proceso {
      * @param e arreglo de electrodomesticos para obtener los valores de sus atributos
      */
 
-    public void registrarProducto(Electrodomestico[] e, Empresa em)
-    {
-        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
-
-        for (Electrodomestico p : e){
-
-            String[] fila = new String[10];
-
-            fila[0] = txtSerie.getText();
-            fila[1] = p.getNombre();
-            fila[2] = p.getTipo();
-            fila[3] = p.getMarca();
-            //fila[4] = getCantidad(); Como se añade la cantidad de Electrodomestico
-            fila[5] = txtPrecioU.getText(); 
-            fila[6] = em.getNombre();
-            fila[7] = em.getPais();
-            fila[8] = txtAdmin.getText();
-            //fila[9] = p.generarFecha(); Considerando plantilla de factura lleva fecha
-
-            modelo.addRow(fila);
-
-        }
-    }
+//    public void registrarProducto(Electrodomestico[] e, Empresa em)
+//    {
+//        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+//
+//        for (Electrodomestico p : e){
+//
+//            String[] fila = new String[10];
+//
+//            fila[0] = txtSerie.getText();
+//            fila[1] = p.getNombre();
+//            fila[2] = p.getTipo();
+//            fila[3] = p.getMarca();
+//            //fila[4] = getCantidad(); Como se añade la cantidad de Electrodomestico
+//            fila[5] = txtPrecioU.getText();
+//            fila[6] = em.getNombre();
+//            fila[7] = em.getPais();
+//            fila[8] = txtAdmin.getText();
+//            //fila[9] = p.generarFecha(); Considerando plantilla de factura lleva fecha
+//
+//            modelo.addRow(fila);
+//
+//        }
+//    }
 
     // End of variables declaration
 }
