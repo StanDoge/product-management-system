@@ -5,10 +5,7 @@
  */
 package Formularios;
 
-import Clases.Administrador;
-import Clases.Electrodomestico;
-import Clases.Empresa;
-import Clases.Usuario;
+import Clases.*;
 import Interfaces.Proceso;
 import com.sun.glass.events.KeyEvent;
 import javax.swing.JOptionPane;
@@ -521,19 +518,16 @@ public class Registro extends javax.swing.JFrame implements Proceso {
             JOptionPane.showMessageDialog(null, "No dejar este campo vacio", "Error", JOptionPane.INFORMATION_MESSAGE);
         }
 
-        Empresa generica = new Empresa(txtEmpresa.getText(), txtPais.getText());
-        Administrador admin = new Administrador(txtAdmin.getText());
-
         //Parseo de dos variables de tipo texto a numericas
         float precio = Float.parseFloat(txtPrecioU.getText());
         int cantidad = Integer.parseInt(txtCantidad.getText());
-
+        Empresa generica = new Empresa(txtEmpresa.getText(), txtPais.getText());
+        Administrador admin = new Administrador(txtAdmin.getText());
         Electrodomestico[] stockProductos = generarProductos(precio, generica, cantidad);
+        Entrega ahora = new Entrega(stockProductos);
 
         try {
-//            Usuario.registrarProducto(stockProductos, generica,admin,jTable1);
-            registrarProducto(stockProductos,generica);
-
+            Usuario.registrarProducto(stockProductos, generica,admin,jTable1);
         }catch(Exception e){
             System.out.printf("El error fue: %s", e);
         }
@@ -618,29 +612,29 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         return stockProductos;
     }
 
-    public void registrarProducto(Electrodomestico[] e, Empresa em)
-    {
-        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
-
-        for (Electrodomestico p : e){
-
-            String[] fila = new String[10];
-
-            fila[0] = txtSerie.getText();
-            fila[1] = p.getNombre();
-            fila[2] = p.getTipo();
-            fila[3] = p.getMarca();
-            //fila[4] = getCantidad(); Como se añade la cantidad de Electrodomestico
-            fila[5] = txtPrecioU.getText();
-            fila[6] = em.getNombre();
-            fila[7] = em.getPais();
-            fila[8] = txtAdmin.getText();
-            //fila[9] = p.generarFecha(); Considerando plantilla de factura lleva fecha
-
-            modelo.addRow(fila);
-
-        }
-    }
+//    public void registrarProducto(Electrodomestico[] e, Empresa em)
+//    {
+//        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+//
+//        for (Electrodomestico p : e){
+//
+//            String[] fila = new String[10];
+//
+//            fila[0] = txtSerie.getText();
+//            fila[1] = p.getNombre();
+//            fila[2] = p.getTipo();
+//            fila[3] = p.getMarca();
+//            //fila[4] = getCantidad(); Como se añade la cantidad de Electrodomestico
+//            fila[5] = txtPrecioU.getText();
+//            fila[6] = em.getNombre();
+//            fila[7] = em.getPais();
+//            fila[8] = txtAdmin.getText();
+//            //fila[9] = p.generarFecha(); Considerando plantilla de factura lleva fecha
+//
+//            modelo.addRow(fila);
+//
+//        }
+//    }
 
     // End of variables declaration
 }

@@ -47,7 +47,7 @@ public class Usuario extends Persona implements Proceso
             fila[6] = em.getNombre();
             fila[7] = em.getPais();
             fila[8] = admin.getUsuario();
-//            fila[9] = p.generarFecha(); Considerando plantilla de factura lleva fecha
+//          fila[9] = p.generarFecha(); Considerando plantilla de factura lleva fecha
             modelo.addRow(fila);
 
         }
