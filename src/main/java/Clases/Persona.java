@@ -17,7 +17,6 @@ public abstract class Persona
     String usuario;
     String contraseña;
 
-
     //Getters & Setters
     public String getUsuario() {
         return usuario;

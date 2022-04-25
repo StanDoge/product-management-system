@@ -521,24 +521,21 @@ public class Registro extends javax.swing.JFrame implements Proceso {
             JOptionPane.showMessageDialog(null, "No dejar este campo vacio", "Error", JOptionPane.INFORMATION_MESSAGE);
         }
 
+        Empresa generica = new Empresa(txtEmpresa.getText(), txtPais.getText());
+        Administrador admin = new Administrador(txtAdmin.getText());
+
+        //Parseo de dos variables de tipo texto a numericas
+        float precio = Float.parseFloat(txtPrecioU.getText());
+        int cantidad = Integer.parseInt(txtCantidad.getText());
+
+        Electrodomestico[] stockProductos = generarProductos(precio, generica, cantidad);
+
         try {
-            Empresa generica = new Empresa(txtEmpresa.getText(), txtPais.getText());
-            Administrador admin = new Administrador(txtAdmin.getText());
-
-            //Parseo de dos variables de tipo texto a numericas
-            float precio = Float.parseFloat(txtPrecioU.getText());
-            int cantidad = Integer.parseInt(txtCantidad.getText());
-
-            Electrodomestico[] stockProductos = generarProductos(precio, generica, cantidad);
-
             Usuario.registrarProducto(stockProductos, generica,admin,jTable1);
 
         }catch(Exception e){
             System.out.printf("El error fue: %s", e);
         }
-
-
-
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
@@ -549,7 +546,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         }
     }//GEN-LAST:event_txtNombrePKeyTyped
 
-    //todo: eliminar
+    //todo: eliminar @brandSmash
     private void txtSerieKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSerieKeyTyped
         // Validando txtSerie para aceptar solo numeros.
         if (!Character.isDigit(evt.getKeyChar())) {
