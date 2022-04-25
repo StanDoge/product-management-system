@@ -516,7 +516,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     }//GEN-LAST:event_txtTotalActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        if(txtAdmin.getText().isEmpty() || txtAlmacen.getText().isEmpty() || txtCantidad.getText().isEmpty() || txtDireccion.getText().isEmpty() || txtEmpresa.getText().isEmpty() || txtMarca.getText().isEmpty() || txtNombreP.getText().isEmpty() || txtPais.getText().isEmpty() || txtPrecioU.getText().isEmpty() ||  txtTipo.getText().isEmpty() || txtTotal.getText().isEmpty())
+        if(txtAdmin.getText().isEmpty() || txtAlmacen.getText().isEmpty() || txtCantidad.getText().isEmpty() || txtDireccion.getText().isEmpty() || txtEmpresa.getText().isEmpty() || txtMarca.getText().isEmpty() || txtNombreP.getText().isEmpty() || txtPais.getText().isEmpty() || txtPrecioU.getText().isEmpty() ||  txtTipo.getText().isEmpty() )
         {
             JOptionPane.showMessageDialog(null, "No dejar este campo vacio", "Error", JOptionPane.INFORMATION_MESSAGE);
         }
