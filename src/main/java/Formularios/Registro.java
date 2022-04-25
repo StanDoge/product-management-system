@@ -235,12 +235,14 @@ public class Registro extends javax.swing.JFrame implements Proceso {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "N° SERIE", "NOMBRE", "TIPO", "MARCA", "CANTIDAD", "PRECIO UNITARIO", "EMPRESA", "PAIS EMISOR", "ADMINISTRADOR"
+                "N° SERIE", "NOMBRE", "TIPO", "MARCA", "CANTIDAD", "PRECIO UNITARIO", "EMPRESA", "PAIS EMISOR",
+                    "ADMINISTRADOR, FECHA RECIBIDO"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class,
-                    java.lang.Integer.class, java.lang.Float.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class,
+                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class,
+                    java.lang.String.class,java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -613,30 +615,6 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         }
         return stockProductos;
     }
-
-//    public void registrarProducto(Electrodomestico[] e, Empresa em)
-//    {
-//        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
-//
-//        for (Electrodomestico p : e){
-//
-//            String[] fila = new String[10];
-//
-//            fila[0] = txtSerie.getText();
-//            fila[1] = p.getNombre();
-//            fila[2] = p.getTipo();
-//            fila[3] = p.getMarca();
-//            //fila[4] = getCantidad(); Como se añade la cantidad de Electrodomestico
-//            fila[5] = txtPrecioU.getText();
-//            fila[6] = em.getNombre();
-//            fila[7] = em.getPais();
-//            fila[8] = txtAdmin.getText();
-//            //fila[9] = p.generarFecha(); Considerando plantilla de factura lleva fecha
-//
-//            modelo.addRow(fila);
-//
-//        }
-//    }
 
     // End of variables declaration
 }
