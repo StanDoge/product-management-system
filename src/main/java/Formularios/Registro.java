@@ -493,7 +493,18 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        // TODO add your handling code here:
+        txtAdmin.setText("");
+        txtAlmacen.setText("");
+        txtCantidad.setText("");
+        txtDireccion.setText("");
+        txtEmpresa.setText("");
+        txtMarca.setText("");
+        txtNombreP.setText("");
+        txtPais.setText("");
+        txtPrecioU.setText("");
+        txtSerie.setText("");
+        txtTipo.setText("");
+        txtTotal.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnCalcularTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularTotalActionPerformed
