@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 public class Almacen implements Proceso {
     String nombre;
-    String admin;
+    Administrador admin;
     Entrega electrodomesticos;
     int codigoPostal;
     String direccion;
@@ -14,7 +14,7 @@ public class Almacen implements Proceso {
 
 
     //Constructor
-    public Almacen(String nombre, String admin, Entrega electrodomesticos, String direccion,LocalDate fechaEnvio) {
+    public Almacen(String nombre, Administrador admin, Entrega electrodomesticos, String direccion,LocalDate fechaEnvio) {
         this.nombre = nombre;
         this.admin = admin;
         this.electrodomesticos = electrodomesticos;
@@ -41,11 +41,11 @@ public class Almacen implements Proceso {
         this.nombre = nombre;
     }
 
-    public String getAdmin() {
+    public Administrador getAdmin() {
         return admin;
     }
 
-    public void setAdmin(String admin) {
+    public void setAdmin(Administrador admin) {
         this.admin = admin;
     }
 
