@@ -522,7 +522,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         }
         
         Empresa generica = new Empresa(txtEmpresa.getText(), txtPais.getText());
-//        Administrador admin = new Administrador(txtAdmin.getText());
+        Administrador admin = new Administrador(txtAdmin.getText());
 
         //Parseo de dos variables de tipo texto a numericas
         float precio = Float.parseFloat(txtPrecioU.getText());
@@ -530,7 +530,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
 
         Electrodomestico[] stockProductos = generarProductos(precio, generica, cantidad);
 
-//        Usuario.registrarProducto(stockProductos, generica);
+        Usuario.registrarProducto(stockProductos, generica,admin,jTable1);
 
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
