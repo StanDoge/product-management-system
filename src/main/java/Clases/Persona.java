@@ -13,9 +13,9 @@ import Interfaces.Proceso;
  */
 public abstract class Persona
 {
-    int ID;
-    String usuario;
-    String contraseña;
+    protected int ID;
+    protected String usuario;
+    protected String contraseña;
 
     //Getters & Setters
     public String getUsuario() {
