@@ -520,17 +520,24 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         {
             JOptionPane.showMessageDialog(null, "No dejar este campo vacio", "Error", JOptionPane.INFORMATION_MESSAGE);
         }
-        
-        Empresa generica = new Empresa(txtEmpresa.getText(), txtPais.getText());
-        Administrador admin = new Administrador(txtAdmin.getText());
 
-        //Parseo de dos variables de tipo texto a numericas
-        float precio = Float.parseFloat(txtPrecioU.getText());
-        int cantidad = Integer.parseInt(txtCantidad.getText());
+        try {
+            Empresa generica = new Empresa(txtEmpresa.getText(), txtPais.getText());
+            Administrador admin = new Administrador(txtAdmin.getText());
 
-        Electrodomestico[] stockProductos = generarProductos(precio, generica, cantidad);
+            //Parseo de dos variables de tipo texto a numericas
+            float precio = Float.parseFloat(txtPrecioU.getText());
+            int cantidad = Integer.parseInt(txtCantidad.getText());
 
-        Usuario.registrarProducto(stockProductos, generica,admin,jTable1);
+            Electrodomestico[] stockProductos = generarProductos(precio, generica, cantidad);
+
+            Usuario.registrarProducto(stockProductos, generica,admin,jTable1);
+
+        }catch(Exception e){
+            System.out.printf("El error fue: %s", e);
+        }
+
+
 
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
