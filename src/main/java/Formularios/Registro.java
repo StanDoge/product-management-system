@@ -532,7 +532,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         Almacen local = new Almacen(txtAlmacen.getText(),admin,ahora,txtDireccion.getText());
 
         try {
-            Usuario.registrarProducto(stockProductos, generica,admin,jTable1);
+            Usuario.registrarProducto(stockProductos, generica,admin,local,jTable1);
         }catch(Exception e){
             System.out.printf("El error fue: %s", e);
         }
