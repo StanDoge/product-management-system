@@ -599,7 +599,6 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
-
     /**
      * Crea una arreglo de un tipo de electrodomestico.
      * @param precio:   precio unitario
