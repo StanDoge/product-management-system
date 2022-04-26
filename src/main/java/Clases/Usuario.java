@@ -44,8 +44,8 @@ public class Usuario extends Persona implements Proceso
             fila[1] = p.getNombre();
             fila[2] = p.getTipo();
             fila[3] = p.getMarca();
-            fila[4] = Float.toString(p.getPrecio());
-            fila[5] = Float.toString(Math.round(p.getPrecioTotal()));
+            fila[4] =formater.format(p.getPrecio());
+            fila[5] = formater.format(p.getPrecioTotal());
             fila[6] = em.getNombre();
             fila[7] = em.getPais();
             fila[8] = local.admin.getUsuario();
