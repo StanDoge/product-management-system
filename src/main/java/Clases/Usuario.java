@@ -9,6 +9,7 @@ import Interfaces.Proceso;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -33,6 +34,7 @@ public class Usuario extends Persona implements Proceso
     public static void registrarProducto(Electrodomestico[] e, Empresa em,  Almacen local, JTable table)
     {
         DefaultTableModel modelo = (DefaultTableModel) table.getModel();
+        DecimalFormat formater = new DecimalFormat();
 
         for (Electrodomestico p : e){
 
