@@ -591,7 +591,8 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         Electrodomestico[] stockProductos = new Electrodomestico[cantidad];
 
         for (int i = 0; i < cantidad; i++) {
-            Electrodomestico generico = new Electrodomestico(txtNombreP.getText(), txtMarca.getText(), generarID(), txtTipo.getText(), precio, generica);
+            Electrodomestico generico = new Electrodomestico(txtNombreP.getText(), txtMarca.getText(), generarID(), txtTipo.getText(), precio,  generica);
+            generico.calcularTotal(cantidad);
             stockProductos[i] = generico;
         }
         return stockProductos;
