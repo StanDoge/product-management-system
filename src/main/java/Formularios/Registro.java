@@ -482,9 +482,6 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         txtTotal.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
-    private void btnCalcularTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularTotalActionPerformed
-        
-    }//GEN-LAST:event_btnCalcularTotalActionPerformed
 
     private void txtEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpresaActionPerformed
     }//GEN-LAST:event_txtEmpresaActionPerformed
@@ -522,6 +519,10 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         }
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void btnCalcularTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularTotalActionPerformed
+
+    }//GEN-LAST:event_btnCalcularTotalActionPerformed
 
     private void txtNombrePKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombrePKeyTyped
         // Validando txtNombreP para aceptar solo letras.
@@ -587,7 +588,8 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         Electrodomestico[] stockProductos = new Electrodomestico[cantidad];
 
         for (int i = 0; i < cantidad; i++) {
-            Electrodomestico generico = new Electrodomestico(txtNombreP.getText(), txtMarca.getText(), generarID(), txtTipo.getText(), precio,  generica);
+            Electrodomestico generico = new Electrodomestico(txtNombreP.getText(), txtMarca.getText(), generarID(),
+                    txtTipo.getText(), precio,  generica);
             generico.calcularTotal(cantidad);
             stockProductos[i] = generico;
         }
