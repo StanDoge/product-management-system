@@ -483,23 +483,19 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnCalcularTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularTotalActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnCalcularTotalActionPerformed
 
     private void txtEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpresaActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtEmpresaActionPerformed
 
     private void txtPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPaisActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtPaisActionPerformed
 
     private void txtNombrePActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtNombrePActionPerformed
 
     private void txtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtTotalActionPerformed
 
     public static Electrodomestico[] prueba = null;
