@@ -11,7 +11,6 @@ public class Electrodomestico implements Proceso {
     String marca;
     int nSerie;
     String tipo;
-    boolean estado = true;
     float precio;
     float precioTotal;
     Empresa propietario;
@@ -57,14 +56,6 @@ public class Electrodomestico implements Proceso {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
     }
 
     public float getIVA() {
