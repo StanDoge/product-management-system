@@ -44,10 +44,10 @@ public class Usuario extends Persona implements Proceso
             fila[3] = p.getMarca();
             fila[4] = Float.toString(p.getPrecio());
 //            fila[5] =
-            fila[6] = em.getNombre();
-            fila[7] = em.getPais();
-            fila[8] = local.admin.getUsuario();
-            fila[9] = local.getFechaRecibido().toString();
+            fila[5] = em.getNombre();
+            fila[6] = em.getPais();
+            fila[7] = local.admin.getUsuario();
+            fila[8] = local.getFechaRecibido().toString();
             modelo.addRow(fila);
 
         }
