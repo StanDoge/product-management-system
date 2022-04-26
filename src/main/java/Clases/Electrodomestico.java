@@ -89,8 +89,10 @@ public class Electrodomestico implements Proceso {
     //metodos
 
     /**
-     * Inicializa el valor del atributo precioTotal sumando el valor del precio unitario + el IVA de dicho precio
-     * @author Stanley
+     * Calcular el precio total del stock de un tipo de producto. Usando su precio unitario + IVA por la cantidaad
+     * de productos del arreglo.
+     * @param cantidad Cantidad total de productos a los cuales se les aplicara IVA y sumaran sus precios
+     * finales.
      */
     public void calcularTotal(int cantidad){
         this.precioTotal = (this.precio + (this.precio * IVA)) * cantidad;
