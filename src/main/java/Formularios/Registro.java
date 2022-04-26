@@ -222,7 +222,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "N° SERIE", "NOMBRE", "TIPO", "MARCA", "CANTIDAD", "PRECIO UNITARIO", "EMPRESA", "PAIS EMISOR", "ADMINISTRADOR", "FECHA"
+                "N° SERIE", "NOMBRE", "TIPO", "MARCA", "PRECIO UNITARIO", "PRECIO TOTAL DE LOS N PRODUCTOS", "EMPRESA", "PAIS EMISOR", "ADMINISTRADOR", "FECHA"
             }
         ) {
             Class[] types = new Class [] {
