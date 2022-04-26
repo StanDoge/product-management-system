@@ -3,6 +3,7 @@ package PRN215_4_3;
 import Clases.Electrodomestico;
 import Clases.Empresa;
 import Clases.Entrega;
+import Formularios.Registro;
 
 /**
  *@authors
@@ -35,5 +36,6 @@ public class PRN215_4_3 {
 //                generica.getNombre(), primeraEntrega.getCantidadElectrodomesticos(), licuadora.getTipo());
 //
 //        System.out.printf("Fecha entrega: %s",primeraEntrega.getFechaEnvio());
+        System.out.println(Registro.prueba);
     }
 }
