@@ -11,6 +11,7 @@ import com.sun.glass.events.KeyEvent;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  * @author usuario
@@ -536,8 +537,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     private void txtNombrePActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePActionPerformed
     }//GEN-LAST:event_txtNombrePActionPerformed
 
-    public static Electrodomestico[] prueba = null;
-
+    ArrayList<Electrodomestico> arr = new ArrayList<>();
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // Validamos c/u cajas de texto cuando está vacío
         try {
@@ -558,7 +558,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         Entrega ahora = new Entrega(stockProductos);
         Almacen local = new Almacen(txtAlmacen.getText(),admin,ahora,txtDireccion.getText());
         
-        Usuario.registrarProducto(stockProductos, generica,local,jTable1);
+        Usuario.registrarProducto(stockProductos, arr ,generica,local,jTable1);
         } catch (NumberFormatException e) {
             System.out.printf("El error fue: %s", e);
         } catch (NegativeArraySizeException sms){ 

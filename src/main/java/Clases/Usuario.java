@@ -10,6 +10,7 @@ import Interfaces.Proceso;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 /**
  *
@@ -31,7 +32,7 @@ public class Usuario extends Persona implements Proceso
      * Envio desde el arreglo de productos hasta la tabla del formulario
      * @param e arreglo de electrodomesticos para obtener los valores de sus atributos
      */
-    public static void registrarProducto(Electrodomestico[] e, Empresa em,  Almacen local, JTable table)
+    public static void registrarProducto(Electrodomestico[] e, ArrayList<Electrodomestico> arr, Empresa em, Almacen local, JTable table)
     {
         DefaultTableModel modelo = (DefaultTableModel) table.getModel();
         DecimalFormat formater = new DecimalFormat();
@@ -50,7 +51,9 @@ public class Usuario extends Persona implements Proceso
             fila[7] = em.getPais();
             fila[8] = local.admin.getUsuario();
             fila[9] = local.getFechaRecibido().toString();
+            arr.add(p);
             modelo.addRow(fila);
+
 
         }
     }
