@@ -537,7 +537,6 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     private void txtNombrePActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePActionPerformed
     }//GEN-LAST:event_txtNombrePActionPerformed
 
-    static ArrayList<Electrodomestico> arr = new ArrayList<>();
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // Validamos c/u cajas de texto cuando está vacío
         try {
@@ -558,11 +557,11 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         Entrega ahora = new Entrega(stockProductos);
         Almacen local = new Almacen(txtAlmacen.getText(),admin,ahora,txtDireccion.getText());
         
-        Usuario.registrarProducto(stockProductos, arr ,generica,local,jTable1);
+        Usuario.registrarProducto(stockProductos, Electrodomestico.arr ,generica,local,jTable1);
         } catch (NumberFormatException e) {
             System.out.printf("El error fue: %s", e);
         } finally {
-            System.out.println(arr.size());
+            System.out.println(Electrodomestico.arr.size());
         }
 
     }//GEN-LAST:event_btnRegistrarActionPerformed

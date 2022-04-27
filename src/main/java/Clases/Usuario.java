@@ -56,7 +56,6 @@ public class Usuario extends Persona implements Proceso
             fila[9] = local.getFechaRecibido().toString();
             modelo.addRow(fila);
 
-
         }
 
     }

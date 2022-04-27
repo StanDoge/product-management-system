@@ -3,6 +3,8 @@ package Clases;
 
 import Interfaces.Proceso;
 
+import java.util.ArrayList;
+
 public class Electrodomestico implements Proceso {
 
     
@@ -14,6 +16,8 @@ public class Electrodomestico implements Proceso {
     float precio;
     float precioTotal;
     Empresa propietario;
+
+    public static ArrayList<Electrodomestico> arr = new ArrayList<>();
 
     //Constructor
     public Electrodomestico(String nombre, String marca, int nSerie, String tipo, float precio,  Empresa propietario) {
