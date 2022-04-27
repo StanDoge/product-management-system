@@ -564,6 +564,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         } catch (NegativeArraySizeException sms){ 
             //Captura excepción de valor negativo, el programa sigue ejecutandose
             System.out.printf("No es valido valores negativos" , sms);
+
         }
 //        if(txtAdmin.getText().isEmpty() || txtAlmacen.getText().isEmpty() || txtCantidad.getText().isEmpty() || 
 //                txtDireccion.getText().isEmpty() || txtEmpresa.getText().isEmpty() || txtMarca.getText().isEmpty() || 
@@ -698,16 +699,21 @@ public class Registro extends javax.swing.JFrame implements Proceso {
      */
     public Electrodomestico[] generarProductos(float precio, Empresa generica, int cantidad) {
 
-        Electrodomestico[] stockProductos = new Electrodomestico[cantidad];
+        Electrodomestico[] stockProductos  = null;
+        try {
+            stockProductos = new Electrodomestico[cantidad];
+           for (int i = 0; i < cantidad; i++) {
+               Electrodomestico generico = new Electrodomestico(txtNombreP.getText(), txtMarca.getText(), generarID(),
+                       txtTipo.getText(), precio,  generica);
+               generico.calcularTotal(cantidad);
+               stockProductos[i] = generico;
+           }
 
-        for (int i = 0; i < cantidad; i++) {
-            Electrodomestico generico = new Electrodomestico(txtNombreP.getText(), txtMarca.getText(), generarID(),
-                    txtTipo.getText(), precio,  generica);
-            generico.calcularTotal(cantidad);
-            stockProductos[i] = generico;
-        }
+       }
+       catch (NegativeArraySizeException sms){
+           System.out.printf("No es valido valores negativos" , sms);
+       }
         return stockProductos;
+        // End of variables declaration
     }
-
-    // End of variables declaration
 }
