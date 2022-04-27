@@ -170,9 +170,20 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         lblMarca.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblMarca.setText("Marca");
 
+        txtMarca.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMarcaKeyTyped(evt);
+            }
+        });
+
         lblTipo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblTipo.setText("Tipo");
 
+        txtTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTipoActionPerformed(evt);
+            }
+        });
         txtTipo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTipoKeyTyped(evt);
@@ -215,11 +226,11 @@ public class Registro extends javax.swing.JFrame implements Proceso {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "N° SERIE", "NOMBRE", "TIPO", "MARCA", "CANTIDAD", "PRECIO UNITARIO", "EMPRESA", "PAIS EMISOR", "ADMINISTRADOR", "FECHA"
+                "N° SERIE", "NOMBRE", "TIPO", "MARCA", "PRECIO UNITARIO", "PRECIO DE STOCK", "EMPRESA", "PAIS EMISOR", "ADMINISTRADOR", "FECHA"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Float.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -233,8 +244,20 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         lblInfoAdmin.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         lblInfoAdmin.setText("Información del administrador");
 
+        txtAdmin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAdminKeyTyped(evt);
+            }
+        });
+
         lblNombreAdmin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblNombreAdmin.setText("Nombre Administrador");
+
+        txtAlmacen.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAlmacenKeyTyped(evt);
+            }
+        });
 
         lblNombreAlm.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblNombreAlm.setText("Nombre de Almacén");
@@ -256,10 +279,20 @@ public class Registro extends javax.swing.JFrame implements Proceso {
                 txtEmpresaActionPerformed(evt);
             }
         });
+        txtEmpresa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtEmpresaKeyTyped(evt);
+            }
+        });
 
         txtPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPaisActionPerformed(evt);
+            }
+        });
+        txtPais.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPaisKeyTyped(evt);
             }
         });
 
@@ -506,8 +539,9 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     public static Electrodomestico[] prueba = null;
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        //Validamos c/u cajas de texto cuando está vacío
-        if(txtAdmin.getText().isEmpty() || txtAlmacen.getText().isEmpty() || txtCantidad.getText().isEmpty() || 
+        // Validamos c/u cajas de texto cuando está vacío
+        try {
+            if(txtAdmin.getText().isEmpty() || txtAlmacen.getText().isEmpty() || txtCantidad.getText().isEmpty() || 
                 txtDireccion.getText().isEmpty() || txtEmpresa.getText().isEmpty() || txtMarca.getText().isEmpty() || 
                 txtNombreP.getText().isEmpty() || txtPais.getText().isEmpty() || txtPrecioU.getText().isEmpty() ||  
                 txtTipo.getText().isEmpty() )
@@ -523,17 +557,41 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         Electrodomestico[] stockProductos = generarProductos(precio, generica, cantidad);
         Entrega ahora = new Entrega(stockProductos);
         Almacen local = new Almacen(txtAlmacen.getText(),admin,ahora,txtDireccion.getText());
-
-        try {
-            Usuario.registrarProducto(stockProductos, generica,local,jTable1);
-        }catch(Exception e){
+        
+        Usuario.registrarProducto(stockProductos, generica,local,jTable1);
+        } catch (NumberFormatException e) {
             System.out.printf("El error fue: %s", e);
+        } catch (NegativeArraySizeException sms){ 
+            //Captura excepción de valor negativo, el programa sigue ejecutandose
+            System.out.printf("No es valido valores negativos" , sms);
         }
+//        if(txtAdmin.getText().isEmpty() || txtAlmacen.getText().isEmpty() || txtCantidad.getText().isEmpty() || 
+//                txtDireccion.getText().isEmpty() || txtEmpresa.getText().isEmpty() || txtMarca.getText().isEmpty() || 
+//                txtNombreP.getText().isEmpty() || txtPais.getText().isEmpty() || txtPrecioU.getText().isEmpty() ||  
+//                txtTipo.getText().isEmpty() )
+//        {
+//            JOptionPane.showMessageDialog(null, "Por favor, no dejar campos vacíos", "Error", JOptionPane.INFORMATION_MESSAGE);
+//        }
+//
+//        //Parseo de dos variables de tipo texto a numericas
+//        float precio = Float.parseFloat(txtPrecioU.getText());
+//        int cantidad = Integer.parseInt(txtCantidad.getText());
+//        Empresa generica = new Empresa(txtEmpresa.getText(), txtPais.getText());
+//        Administrador admin = new Administrador(txtAdmin.getText());
+//        Electrodomestico[] stockProductos = generarProductos(precio, generica, cantidad);
+//        Entrega ahora = new Entrega(stockProductos);
+//        Almacen local = new Almacen(txtAlmacen.getText(),admin,ahora,txtDireccion.getText());
+//
+//        try {
+//            Usuario.registrarProducto(stockProductos, generica,local,jTable1);
+//        }catch(Exception e){
+//            System.out.printf("El error fue: %s", e);
+//        }
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void txtNombrePKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombrePKeyTyped
-        // Validando txtNombreP para aceptar solo letras.
+        // Validando txtNombreP para aceptar solo letras (sin espacios en blanco).
         if (!Character.isLetter(evt.getKeyChar())) {
             evt.consume();
         }
@@ -583,6 +641,53 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void txtTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTipoActionPerformed
+
+    private void txtAlmacenKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAlmacenKeyTyped
+        // Validando nombre de almacén con caracteres
+        char c = evt.getKeyChar();
+        if((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && c != KeyEvent.VK_SPACE){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtAlmacenKeyTyped
+
+    private void txtEmpresaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpresaKeyTyped
+        // Validando txtEmpresa (aceptar letras)
+        char validar = evt.getKeyChar();
+        if(Character.isDigit(validar)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Debe ingresar letras");
+        }
+    }//GEN-LAST:event_txtEmpresaKeyTyped
+
+    private void txtPaisKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPaisKeyTyped
+        // Validando nombre de pais emisor
+        Character c = evt.getKeyChar();
+        if(!Character.isLetter(c) && c!=KeyEvent.VK_SPACE){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtPaisKeyTyped
+
+    private void txtMarcaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMarcaKeyTyped
+        // Valida ingreso de masyusculas y minusculas
+        char c = evt.getKeyChar();
+        if((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && c != KeyEvent.VK_SPACE){
+            evt.consume();
+            getToolkit().beep();
+        }
+    }//GEN-LAST:event_txtMarcaKeyTyped
+
+    private void txtAdminKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAdminKeyTyped
+        // Valida txtAdmin (nombres)
+        char n = evt.getKeyChar();
+        if((n < 'a' || n > 'z') && (n < 'A' || n > 'Z') && n != KeyEvent.VK_SPACE){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtAdminKeyTyped
 
     /**
      * Crea una arreglo de un tipo de electrodomestico.

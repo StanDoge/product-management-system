@@ -189,6 +189,9 @@
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="txtMarca"/>
       </AccessibilityProperties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtMarcaKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblTipo">
       <Properties>
@@ -203,6 +206,7 @@
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="txtTipo"/>
       </AccessibilityProperties>
       <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTipoActionPerformed"/>
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTipoKeyTyped"/>
       </Events>
     </Component>
@@ -270,12 +274,12 @@
                 <Column editable="true" title="NOMBRE" type="java.lang.String"/>
                 <Column editable="true" title="TIPO" type="java.lang.String"/>
                 <Column editable="true" title="MARCA" type="java.lang.String"/>
-                <Column editable="true" title="CANTIDAD" type="java.lang.Object"/>
-                <Column editable="true" title="PRECIO UNITARIO" type="java.lang.Float"/>
+                <Column editable="true" title="PRECIO UNITARIO" type="java.lang.String"/>
+                <Column editable="true" title="PRECIO DE STOCK" type="java.lang.String"/>
                 <Column editable="true" title="EMPRESA" type="java.lang.String"/>
                 <Column editable="true" title="PAIS EMISOR" type="java.lang.String"/>
                 <Column editable="true" title="ADMINISTRADOR" type="java.lang.String"/>
-                <Column editable="true" title="FECHA" type="java.lang.Object"/>
+                <Column editable="true" title="FECHA" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -437,6 +441,9 @@
           <AccessibilityProperties>
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="txtAdmin"/>
           </AccessibilityProperties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtAdminKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblNombreAdmin">
           <Properties>
@@ -453,6 +460,9 @@
           <AccessibilityProperties>
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="txtAlmacen"/>
           </AccessibilityProperties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtAlmacenKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblNombreAlm">
           <Properties>
@@ -517,6 +527,7 @@
           </AccessibilityProperties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmpresaActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEmpresaKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtPais">
@@ -525,6 +536,7 @@
           </AccessibilityProperties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPaisActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPaisKeyTyped"/>
           </Events>
         </Component>
       </SubComponents>
