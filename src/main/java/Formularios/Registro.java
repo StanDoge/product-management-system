@@ -463,9 +463,13 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     public static Electrodomestico[] prueba = null;
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        if(txtAdmin.getText().isEmpty() || txtAlmacen.getText().isEmpty() || txtCantidad.getText().isEmpty() || txtDireccion.getText().isEmpty() || txtEmpresa.getText().isEmpty() || txtMarca.getText().isEmpty() || txtNombreP.getText().isEmpty() || txtPais.getText().isEmpty() || txtPrecioU.getText().isEmpty() ||  txtTipo.getText().isEmpty() )
+        //Validamos c/u cajas de texto cuando está vacío
+        if(txtAdmin.getText().isEmpty() || txtAlmacen.getText().isEmpty() || txtCantidad.getText().isEmpty() || 
+                txtDireccion.getText().isEmpty() || txtEmpresa.getText().isEmpty() || txtMarca.getText().isEmpty() || 
+                txtNombreP.getText().isEmpty() || txtPais.getText().isEmpty() || txtPrecioU.getText().isEmpty() ||  
+                txtTipo.getText().isEmpty() )
         {
-            JOptionPane.showMessageDialog(null, "No dejar este campo vacio", "Error", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Por favor, no dejar campos vacíos", "Error", JOptionPane.INFORMATION_MESSAGE);
         }
 
         //Parseo de dos variables de tipo texto a numericas
@@ -498,7 +502,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         if(Character.isDigit(validar)){
             getToolkit().beep();
             evt.consume();
-            JOptionPane.showMessageDialog(rootPane, "Ingrese texto");
+            JOptionPane.showMessageDialog(rootPane, "Ingrese solo texto");
         }
     }//GEN-LAST:event_txtTipoKeyTyped
 
@@ -508,7 +512,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         if(Character.isLetter(validar)){
             getToolkit().beep();
             evt.consume();
-            JOptionPane.showMessageDialog(rootPane, "Solo ingrese numeros");
+            JOptionPane.showMessageDialog(rootPane, "Solo ingrese números");
         }
     }//GEN-LAST:event_txtCantidadKeyTyped
 
