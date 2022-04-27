@@ -10,37 +10,29 @@ import Interfaces.Proceso;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
- *
  * @author César
  */
-public class Usuario extends Persona implements Proceso
-{
-    public Usuario(String usuario)
-    {
+public class Usuario extends Persona implements Proceso {
+    public Usuario(String usuario) {
         this.ID = generarID();
     }
-    
-    public void consultarProducto()
-    {
+
+    public void consultarProducto() {
         //...
     }
 
     /**
      * Envio desde el arreglo de productos hasta la tabla del formulario
+     *
      * @param e arreglo de electrodomesticos para obtener los valores de sus atributos
      */
-    public static void registrarProducto(Electrodomestico[] e, ArrayList<Electrodomestico> arr, Empresa em, Almacen local, JTable table)
-    {
+    public static void registrarProducto(Electrodomestico[] e, Empresa em, Almacen local, JTable table) {
         DefaultTableModel modelo = (DefaultTableModel) table.getModel();
         DecimalFormat formater = new DecimalFormat();
 
-        arr.addAll(Arrays.asList(e));
-
-        for (Electrodomestico p : arr){
+        for (Electrodomestico p : e) {
 
             String[] fila = new String[10];
 
@@ -48,7 +40,7 @@ public class Usuario extends Persona implements Proceso
             fila[1] = p.getNombre();
             fila[2] = p.getTipo();
             fila[3] = p.getMarca();
-            fila[4] =formater.format(p.getPrecio());
+            fila[4] = formater.format(p.getPrecio());
             fila[5] = formater.format(p.getPrecioTotal());
             fila[6] = em.getNombre();
             fila[7] = em.getPais();

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Electrodomestico implements Proceso {
 
-    
+
     String nombre;
     final float IVA = 0.13f;
     String marca;
@@ -20,7 +20,7 @@ public class Electrodomestico implements Proceso {
     public static ArrayList<Electrodomestico> arr = new ArrayList<>();
 
     //Constructor
-    public Electrodomestico(String nombre, String marca, int nSerie, String tipo, float precio,  Empresa propietario) {
+    public Electrodomestico(String nombre, String marca, int nSerie, String tipo, float precio, Empresa propietario) {
         this.nombre = nombre;
         this.marca = marca;
         this.nSerie = generarID();
@@ -37,7 +37,7 @@ public class Electrodomestico implements Proceso {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
     public String getMarca() {
         return marca;
     }
@@ -95,10 +95,11 @@ public class Electrodomestico implements Proceso {
     /**
      * Calcular el precio total del stock de un tipo de producto. Usando su precio unitario + IVA por la cantidaad
      * de productos del arreglo.
+     *
      * @param cantidad Cantidad total de productos a los cuales se les aplicara IVA y sumaran sus precios
-     * finales.
+     *                 finales.
      */
-    public void calcularTotal(int cantidad){
+    public void calcularTotal(int cantidad) {
         this.precioTotal = (this.precio + (this.precio * IVA)) * cantidad;
     }
 }

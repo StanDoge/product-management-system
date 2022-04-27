@@ -78,6 +78,7 @@ public class Almacen implements Proceso {
 
     /**
      * Suma 5 dias a la fecha de envio dada como argumento
+     *
      * @param fecha , tipo LocalDate es la fecha generada en Entrega
      * @return fecha de envio + 5 dias = fecha recibido
      */

@@ -8,11 +8,9 @@ package Clases;
 import Interfaces.Proceso;
 
 /**
- *
  * @author César
  */
-public abstract class Persona
-{
+public abstract class Persona {
     protected int ID;
     protected String usuario;
     protected String contraseña;

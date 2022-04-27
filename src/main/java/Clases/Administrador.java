@@ -8,17 +8,14 @@ package Clases;
 import Interfaces.Proceso;
 
 /**
- *
  * @author César
  */
-public class Administrador extends Persona implements Proceso
-{
+public class Administrador extends Persona implements Proceso {
     public Administrador(String usuario) {
         this.ID = generarID();
     }
 
-    public void modficarRegistro()
-    {
+    public void modficarRegistro() {
         //...
     }
 }
