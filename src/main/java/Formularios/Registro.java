@@ -565,29 +565,6 @@ public class Registro extends javax.swing.JFrame implements Proceso {
             System.out.println(arr.size());
         }
 
-        //        if(txtAdmin.getText().isEmpty() || txtAlmacen.getText().isEmpty() || txtCantidad.getText().isEmpty() ||
-//                txtDireccion.getText().isEmpty() || txtEmpresa.getText().isEmpty() || txtMarca.getText().isEmpty() || 
-//                txtNombreP.getText().isEmpty() || txtPais.getText().isEmpty() || txtPrecioU.getText().isEmpty() ||  
-//                txtTipo.getText().isEmpty() )
-//        {
-//            JOptionPane.showMessageDialog(null, "Por favor, no dejar campos vacíos", "Error", JOptionPane.INFORMATION_MESSAGE);
-//        }
-//
-//        //Parseo de dos variables de tipo texto a numericas
-//        float precio = Float.parseFloat(txtPrecioU.getText());
-//        int cantidad = Integer.parseInt(txtCantidad.getText());
-//        Empresa generica = new Empresa(txtEmpresa.getText(), txtPais.getText());
-//        Administrador admin = new Administrador(txtAdmin.getText());
-//        Electrodomestico[] stockProductos = generarProductos(precio, generica, cantidad);
-//        Entrega ahora = new Entrega(stockProductos);
-//        Almacen local = new Almacen(txtAlmacen.getText(),admin,ahora,txtDireccion.getText());
-//
-//        try {
-//            Usuario.registrarProducto(stockProductos, generica,local,jTable1);
-//        }catch(Exception e){
-//            System.out.printf("El error fue: %s", e);
-//        }
-
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void txtNombrePKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombrePKeyTyped
