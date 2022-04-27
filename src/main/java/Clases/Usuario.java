@@ -11,6 +11,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -37,7 +38,9 @@ public class Usuario extends Persona implements Proceso
         DefaultTableModel modelo = (DefaultTableModel) table.getModel();
         DecimalFormat formater = new DecimalFormat();
 
-        for (Electrodomestico p : e){
+        arr.addAll(Arrays.asList(e));
+
+        for (Electrodomestico p : arr){
 
             String[] fila = new String[10];
 
@@ -51,11 +54,11 @@ public class Usuario extends Persona implements Proceso
             fila[7] = em.getPais();
             fila[8] = local.admin.getUsuario();
             fila[9] = local.getFechaRecibido().toString();
-            arr.add(p);
             modelo.addRow(fila);
 
 
         }
+
     }
 
 }

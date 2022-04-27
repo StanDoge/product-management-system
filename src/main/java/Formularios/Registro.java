@@ -537,7 +537,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     private void txtNombrePActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePActionPerformed
     }//GEN-LAST:event_txtNombrePActionPerformed
 
-    ArrayList<Electrodomestico> arr = new ArrayList<>();
+    static ArrayList<Electrodomestico> arr = new ArrayList<>();
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // Validamos c/u cajas de texto cuando está vacío
         try {
@@ -561,12 +561,11 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         Usuario.registrarProducto(stockProductos, arr ,generica,local,jTable1);
         } catch (NumberFormatException e) {
             System.out.printf("El error fue: %s", e);
-        } catch (NegativeArraySizeException sms){ 
-            //Captura excepción de valor negativo, el programa sigue ejecutandose
-            System.out.printf("No es valido valores negativos" , sms);
-
+        } finally {
+            System.out.println(arr.size());
         }
-//        if(txtAdmin.getText().isEmpty() || txtAlmacen.getText().isEmpty() || txtCantidad.getText().isEmpty() || 
+
+        //        if(txtAdmin.getText().isEmpty() || txtAlmacen.getText().isEmpty() || txtCantidad.getText().isEmpty() ||
 //                txtDireccion.getText().isEmpty() || txtEmpresa.getText().isEmpty() || txtMarca.getText().isEmpty() || 
 //                txtNombreP.getText().isEmpty() || txtPais.getText().isEmpty() || txtPrecioU.getText().isEmpty() ||  
 //                txtTipo.getText().isEmpty() )
