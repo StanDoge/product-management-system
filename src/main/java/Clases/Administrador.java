@@ -13,6 +13,7 @@ import Interfaces.Proceso;
 public class Administrador extends Persona implements Proceso {
     public Administrador(String usuario) {
         this.ID = generarID();
+        this.usuario = usuario;
     }
 
     public void modficarRegistro() {
