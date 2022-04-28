@@ -740,11 +740,10 @@ public class Registro extends javax.swing.JFrame implements Proceso {
             txtNombreP.setText(tbRegistro.getValueAt(filaSeleccionada, 1).toString());
             txtTipo.setText(tbRegistro.getValueAt(filaSeleccionada, 2).toString());
             txtMarca.setText(tbRegistro.getValueAt(filaSeleccionada, 3).toString());
-            txtPrecioU.setText(tbRegistro.getValueAt(filaSeleccionada, 4).toString());
+            //txtPrecioU.setText(tbRegistro.getValueAt(filaSeleccionada, 4).toString());
             txtEmpresa.setText(tbRegistro.getValueAt(filaSeleccionada, 6).toString());
             txtPais.setText(tbRegistro.getValueAt(filaSeleccionada, 7).toString());
             txtAdmin.setText(tbRegistro.getValueAt(filaSeleccionada, 8).toString());
-            txtCantidad.setText(Electrodomestico.arr.toString());
         }else{
             JOptionPane.showMessageDialog(null, "Seleccione una fila.");
         }
@@ -756,7 +755,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
             tbRegistro.setValueAt(txtNombreP.getText(), filaSeleccionada, 1);
             tbRegistro.setValueAt(txtTipo.getText(), filaSeleccionada, 2);
             tbRegistro.setValueAt(txtMarca.getText(), filaSeleccionada, 3);
-            tbRegistro.setValueAt(txtPrecioU.getText(), filaSeleccionada, 4);
+            //tbRegistro.setValueAt(txtPrecioU.getText(), filaSeleccionada, 4);
             tbRegistro.setValueAt(txtEmpresa.getText(), filaSeleccionada, 6);
             tbRegistro.setValueAt(txtPais.getText(), filaSeleccionada, 7);
             tbRegistro.setValueAt(txtAdmin.getText(), filaSeleccionada, 8);
