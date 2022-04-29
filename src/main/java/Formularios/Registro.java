@@ -343,6 +343,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         lblTipo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblTipo.setText("Tipo");
 
+        txtCantidad.setEnabled(false);
         txtCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCantidadKeyTyped(evt);
@@ -621,7 +622,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     private void txtCantidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadKeyTyped
         // Validando txtCantidad para ingresar cantidad (en numeros)
         char validar = evt.getKeyChar();
-        if (Character.isLetter(validar)) {
+        if (!Character.isDigit(validar)) {
             getToolkit().beep();
             evt.consume();
             JOptionPane.showMessageDialog(rootPane, "Solo ingrese números");
