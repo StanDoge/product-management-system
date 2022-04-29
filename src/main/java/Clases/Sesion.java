@@ -5,14 +5,14 @@ import Formularios.Registro;
 import javax.swing.*;
 
 public abstract class Sesion {
-    String usuario;
-    String pswUsuario;
-    String admin;
-    String pswAdmin;
-
+    static String usuario = "user";
+    static String pswUsuario = "sistema";
+    static String admin = "admin";
+    static String pswAdmin = "PRN2";
 
     public static boolean iniciarSesion(String us, String pswUs, String adm, String pswAdm) {
-        if (us.equals("user") && pswUs.equals("sistema") || adm.equals("admin") && pswAdm.equals("PRN2")) {
+        if (us.equals(Sesion.usuario) && pswUs.equals(Sesion.pswUsuario) || adm.equals(Sesion.admin)
+                && pswAdm.equals(Sesion.pswAdmin)) {
             Registro sistema = new Registro();
             sistema.setVisible(true);
             return true;
