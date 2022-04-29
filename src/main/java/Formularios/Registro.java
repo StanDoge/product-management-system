@@ -613,7 +613,8 @@ public class Registro extends javax.swing.JFrame implements Proceso {
                     txtDireccion.getText().isEmpty() || txtEmpresa.getText().isEmpty() || txtMarca.getText().isEmpty() ||
                     txtNombreP.getText().isEmpty() || txtPais.getText().isEmpty() || txtPrecioU.getText().isEmpty() ||
                     txtTipo.getText().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Por favor, no dejar campos vacíos", "Error", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Por favor, no dejar campos vacíos",
+                        "Error", JOptionPane.INFORMATION_MESSAGE);
             }
 
             //Parseo de dos variables de tipo texto a numericas
@@ -628,7 +629,8 @@ public class Registro extends javax.swing.JFrame implements Proceso {
 
             Usuario.registrarProducto(stockProductos, empresaGenerica, almacenGenerico, tbRegistro);
         } catch (NumberFormatException e) {
-            System.out.printf("El error fue: %s", e);
+            JOptionPane.showMessageDialog(rootPane, "Inserte el tipo de dato requerido en cada campo",
+                    "Error", JOptionPane.ERROR_MESSAGE);
         }
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
