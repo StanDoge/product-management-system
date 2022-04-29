@@ -1,23 +1,14 @@
 package Clases;
 
-import Formularios.InicioSesion;
 import Formularios.Registro;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class Sesion {
     String usuario;
     String pswUsuario;
     String admin;
     String pswAdmin;
-
-    //Constructor
-    public Sesion(String usuario, String pswUsuario, String admin, String pswAdmin) {
-        this.usuario = usuario;
-        this.pswUsuario = pswUsuario;
-        this.admin = admin;
-        this.pswAdmin = pswAdmin;
-    }
 
     //Getters & Setters
     public String getUsuario() {
