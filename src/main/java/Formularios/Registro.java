@@ -747,25 +747,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
-//    public Electrodomestico[] generarProducto(float precio, Empresa generica, int cantidad) {
-//
-//        Electrodomestico[] stockProductos = null;
-//        try {
-//            stockProductos = new Electrodomestico[cantidad];
-//            for (int i = 0; i < cantidad; i++) {
-//                Electrodomestico generico = new Electrodomestico(txtNombreP.getText(), txtMarca.getText(), generarID(),
-//                        txtTipo.getText(), precio, generica);
-//                generico.calcularTotal(cantidad);
-//                stockProductos[i] = generico;
-//            }
-//
-//        } catch (NegativeArraySizeException sms) {
-//            JOptionPane.showMessageDialog(rootPane, "La cantidad de productos no puede ser negativa", "Error"
-//                    , JOptionPane.ERROR_MESSAGE);
-//        }
-//        return stockProductos;
     // End of variables declaration
-//    }
 
     //Metodo para limpiar
     public void limpiar() {
