@@ -606,6 +606,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     }//GEN-LAST:event_txtNombrePActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+
         // Validamos c/u cajas de texto cuando está vacío
         try {
             if (txtAdmin.getText().isEmpty() || txtAlmacen.getText().isEmpty() || txtCantidad.getText().isEmpty() ||
@@ -616,15 +617,16 @@ public class Registro extends javax.swing.JFrame implements Proceso {
             }
 
             //Parseo de dos variables de tipo texto a numericas
-            float precio = Float.parseFloat(txtPrecioU.getText());
-            int cantidad = Integer.parseInt(txtCantidad.getText());
-            Empresa generica = new Empresa(txtEmpresa.getText(), txtPais.getText());
-            Administrador admin = new Administrador(txtAdmin.getText());
-            Electrodomestico[] stockProductos = generarProductos(precio, generica, cantidad);
-            Entrega ahora = new Entrega(stockProductos);
-            Almacen local = new Almacen(txtAlmacen.getText(), admin, ahora, txtDireccion.getText());
+            float precioGenerico = Float.parseFloat(txtPrecioU.getText());
+            int cantidadGenerica = Integer.parseInt(txtCantidad.getText());
+            Empresa empresaGenerica = new Empresa(txtEmpresa.getText(), txtPais.getText());
+            Administrador administradorGenerico = new Administrador(txtAdmin.getText());
+            Electrodomestico[] stockProductos = generarProductos(precioGenerico, empresaGenerica, cantidadGenerica);
+            Entrega entregaGenerica = new Entrega(stockProductos);
+            Almacen almacenGenerico = new Almacen(txtAlmacen.getText(), administradorGenerico, entregaGenerica,
+                    txtDireccion.getText());
 
-            Usuario.registrarProducto(stockProductos, generica, local, tbRegistro);
+            Usuario.registrarProducto(stockProductos, empresaGenerica, almacenGenerico, tbRegistro);
         } catch (NumberFormatException e) {
             System.out.printf("El error fue: %s", e);
         }
