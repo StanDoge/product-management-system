@@ -43,11 +43,15 @@ public class Empresa implements Proceso {
     }
 
     /**
-     * Crea una arreglo de un tipo de electrodomestico.
+     * Genera un arreglo de productos, los valores de sus atributos provienen desde el formulario.
      *
-     * @param precio:   precio unitario
-     * @param cantidad: cantidad de objetos que estaran dentro del arreglo
-     * @return un arreglo de Electrodomesticos
+     * @param nombreProducto nombre del producto.
+     * @param marcaProducto  marca creadora del producto.
+     * @param tipoProducto   clasidicacion del electrodomestico.
+     * @param precio         precio unitario del producto, sin impuestos.
+     * @param empresa        empresa duena de la marca del electrodomestico.
+     * @param cantidad       cantidad de replicas del producto con las mismas caracteristicas.
+     * @return arreglo de longitud <>cantidad</> del tipo <>Electrodomestico</>.
      */
     public Electrodomestico[] generarProducto(String nombreProducto, String marcaProducto, String tipoProducto,
                                               float precio, Empresa empresa, int cantidad) {
