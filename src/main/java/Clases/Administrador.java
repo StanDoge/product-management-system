@@ -16,8 +16,7 @@ public class Administrador extends Persona implements Proceso {
         this.nombre = usuario;
     }
 
-    public void modficarRegistro() {
-        //...
+    public void modificarRegistro() {
     }
 }
 
