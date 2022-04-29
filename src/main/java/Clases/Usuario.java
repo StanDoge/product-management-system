@@ -44,7 +44,7 @@ public class Usuario extends Persona implements Proceso {
             fila[5] = formater.format(p.getPrecioTotal());
             fila[6] = em.getNombre();
             fila[7] = em.getPais();
-            fila[8] = local.admin.getUsuario();
+            fila[8] = local.admin.getNombre();
             fila[9] = local.getFechaRecibido().toString();
             modelo.addRow(fila);
 
