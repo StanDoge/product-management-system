@@ -21,7 +21,6 @@ public class Almacen implements Proceso {
         this.codigoPostal = generarID();
         this.direccion = direccion;
         this.fechaRecibido = generarFecha(electrodomesticos.getFechaEnvio());
-        //todo: intefaz de fechas
     }
 
     //Getters & Setters

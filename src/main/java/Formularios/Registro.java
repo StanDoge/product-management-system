@@ -622,7 +622,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
             int cantidadGenerica = Integer.parseInt(txtCantidad.getText());
             Empresa empresaGenerica = new Empresa(txtEmpresa.getText(), txtPais.getText());
             Administrador administradorGenerico = new Administrador(txtAdmin.getText());
-            Electrodomestico[] stockProductos = generarProductos(precioGenerico, empresaGenerica, cantidadGenerica);
+            Electrodomestico[] stockProductos = generarProducto(precioGenerico, empresaGenerica, cantidadGenerica);
             Entrega entregaGenerica = new Entrega(stockProductos);
             Almacen almacenGenerico = new Almacen(txtAlmacen.getText(), administradorGenerico, entregaGenerica,
                     txtDireccion.getText());
@@ -817,7 +817,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
      * @param cantidad: cantidad de objetos que estaran dentro del arreglo
      * @return un arreglo de Electrodomesticos
      */
-    public Electrodomestico[] generarProductos(float precio, Empresa generica, int cantidad) {
+    public Electrodomestico[] generarProducto(float precio, Empresa generica, int cantidad) {
 
         Electrodomestico[] stockProductos = null;
         try {
