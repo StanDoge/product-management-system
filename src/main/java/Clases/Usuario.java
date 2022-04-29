@@ -52,26 +52,6 @@ public class Usuario extends Persona implements Proceso {
 
     }
 
-    public Electrodomestico[] generarProducto(String nombreProducto, String marcaProducto, String tipoProducto,
-                                              float precio, Empresa empresa, int cantidad) {
-
-        Electrodomestico[] stockProductos = null;
-        try {
-            stockProductos = new Electrodomestico[cantidad];
-            for (int i = 0; i < cantidad; i++) {
-                Electrodomestico productos = new Electrodomestico(nombreProducto, marcaProducto, generarID(),
-                        tipoProducto, precio, empresa);
-                productos.calcularTotal(cantidad);
-                stockProductos[i] = productos;
-            }
-
-        } catch (NegativeArraySizeException sms) {
-            JOptionPane.showMessageDialog(null, "La cantidad de productos no puede ser negativa",
-                    "Error"
-                    , JOptionPane.ERROR_MESSAGE);
-        }
-        return stockProductos;
-    }
 
 }
 

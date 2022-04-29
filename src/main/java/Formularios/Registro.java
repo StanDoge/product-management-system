@@ -589,7 +589,8 @@ public class Registro extends javax.swing.JFrame implements Proceso {
             int cantidadGenerica = Integer.parseInt(txtCantidad.getText());
             Empresa empresaGenerica = new Empresa(txtEmpresa.getText(), txtPais.getText());
             Administrador administradorGenerico = new Administrador(txtAdmin.getText());
-            Electrodomestico[] stockProductos = generarProducto(precioGenerico, empresaGenerica, cantidadGenerica);
+            Electrodomestico[] stockProductos = empresaGenerica.generarProducto(txtNombreP.getText(), txtMarca.getText(),
+                    txtTipo.getText(), precioGenerico, empresaGenerica, cantidadGenerica);
             Entrega entregaGenerica = new Entrega(stockProductos);
             Almacen almacenGenerico = new Almacen(txtAlmacen.getText(), administradorGenerico, entregaGenerica,
                     txtDireccion.getText());
@@ -746,33 +747,25 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
-    /**
-     * Crea una arreglo de un tipo de electrodomestico.
-     *
-     * @param precio:   precio unitario
-     * @param generica: datos de la empresa duena del producto
-     * @param cantidad: cantidad de objetos que estaran dentro del arreglo
-     * @return un arreglo de Electrodomesticos
-     */
-    public Electrodomestico[] generarProducto(float precio, Empresa generica, int cantidad) {
-
-        Electrodomestico[] stockProductos = null;
-        try {
-            stockProductos = new Electrodomestico[cantidad];
-            for (int i = 0; i < cantidad; i++) {
-                Electrodomestico generico = new Electrodomestico(txtNombreP.getText(), txtMarca.getText(), generarID(),
-                        txtTipo.getText(), precio, generica);
-                generico.calcularTotal(cantidad);
-                stockProductos[i] = generico;
-            }
-
-        } catch (NegativeArraySizeException sms) {
-            JOptionPane.showMessageDialog(rootPane, "La cantidad de productos no puede ser negativa", "Error"
-                    , JOptionPane.ERROR_MESSAGE);
-        }
-        return stockProductos;
-        // End of variables declaration
-    }
+//    public Electrodomestico[] generarProducto(float precio, Empresa generica, int cantidad) {
+//
+//        Electrodomestico[] stockProductos = null;
+//        try {
+//            stockProductos = new Electrodomestico[cantidad];
+//            for (int i = 0; i < cantidad; i++) {
+//                Electrodomestico generico = new Electrodomestico(txtNombreP.getText(), txtMarca.getText(), generarID(),
+//                        txtTipo.getText(), precio, generica);
+//                generico.calcularTotal(cantidad);
+//                stockProductos[i] = generico;
+//            }
+//
+//        } catch (NegativeArraySizeException sms) {
+//            JOptionPane.showMessageDialog(rootPane, "La cantidad de productos no puede ser negativa", "Error"
+//                    , JOptionPane.ERROR_MESSAGE);
+//        }
+//        return stockProductos;
+    // End of variables declaration
+//    }
 
     //Metodo para limpiar
     public void limpiar() {
