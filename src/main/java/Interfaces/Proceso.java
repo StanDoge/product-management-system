@@ -16,6 +16,6 @@ public interface Proceso {
      */
     default int generarID() {
         Random serie = new Random();
-        return Math.abs(serie.nextInt());
+        return Math.abs(serie.nextInt(90000) + 100000);
     }
 }

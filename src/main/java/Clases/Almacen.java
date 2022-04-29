@@ -21,7 +21,6 @@ public class Almacen implements Proceso {
         this.codigoPostal = generarID();
         this.direccion = direccion;
         this.fechaRecibido = generarFecha(electrodomesticos.getFechaEnvio());
-        //todo: intefaz de fechas
     }
 
     //Getters & Setters
@@ -78,6 +77,7 @@ public class Almacen implements Proceso {
 
     /**
      * Suma 5 dias a la fecha de envio dada como argumento
+     *
      * @param fecha , tipo LocalDate es la fecha generada en Entrega
      * @return fecha de envio + 5 dias = fecha recibido
      */

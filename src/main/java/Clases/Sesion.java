@@ -1,78 +1,57 @@
 package Clases;
 
-import Formularios.InicioSesion;
 import Formularios.Registro;
-import javax.swing.JOptionPane;
 
-public class Sesion
-{
-    String usuario;
-    String pswUsuario;
-    String admin;
-    String pswAdmin;
+import javax.swing.*;
 
-    //Constructor
-    public Sesion(String usuario, String pswUsuario, String admin, String pswAdmin) 
-    {
-        this.usuario = usuario;
-        this.pswUsuario = pswUsuario;
-        this.admin = admin;
-        this.pswAdmin = pswAdmin;
-    }
+public abstract class Sesion {
+    static String usuario = "user";
+    static String pswUsuario = "sistema";
+    static String admin = "admin";
+    static String pswAdmin = "PRN2";
 
-    //Getters & Setters
-    public String getUsuario() 
+    //Metodo para iniciar sesión
+    public static boolean iniciarSesion(String us, String pswUs, String adm, String pswAdm) 
     {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) 
-    {
-        this.usuario = usuario;
-    }
-
-    public String getPswUsuario() 
-    {
-        return pswUsuario;
-    }
-
-    public void setPswUsuario(String pswUsuario) 
-    {
-        this.pswUsuario = pswUsuario;
-    }
-
-    public String getAdmin() 
-    {
-        return admin;
-    }
-
-    public void setAdmin(String admin) 
-    {
-        this.admin = admin;
-    }
-
-    public String getPswAdmin() 
-    {
-        return pswAdmin;
-    }
-
-    public void setPswAdmin(String pswAdmin) 
-    {
-        this.pswAdmin = pswAdmin;
-    }
-    
-    public static boolean iniciarSesion(String us, String pswUs, String adm, String pswAdm)
-    {
-        if (us.equals("user") && pswUs.equals("sistema")||adm.equals("admin")&& pswAdm.equals("PRN2"))
+        //Valida credenciales y muestra formulario Registro
+        if (us.equals(Sesion.usuario) && pswUs.equals(Sesion.pswUsuario)) 
         {
             Registro sistema = new Registro();
             sistema.setVisible(true);
+            JOptionPane.showMessageDialog(null, " Encargado del sistema: Usuario. ");
+            // Habilita acciones exclusivas de Usuario
+            sistema.txtPrecioU.setEnabled(true);
+            sistema.txtCantidad.setEnabled(true);
+            sistema.btnRegistrar.setEnabled(true);
+            sistema.btnLimpiar.setEnabled(true);
+            sistema.btnModificar.setEnabled(false);
+            sistema.btnBuscar.setEnabled(false);
+            sistema.btnEliminar.setEnabled(false);
             return true;
-        }
-        else
+        } 
+        else 
         {
-            JOptionPane.showMessageDialog(null, "Ingrese correctamente sus credenciales");
-            return false;
+            if(adm.equals(Sesion.admin) && pswAdm.equals(Sesion.pswAdmin))
+            {
+                Registro sistema = new Registro();
+                sistema.setVisible(true);
+                JOptionPane.showMessageDialog(null, " Encargado del sistema: Administrador. ");
+                sistema.limpiar();
+            // Habilita acciones exclusivas de Admin
+                sistema.txtPrecioU.setEnabled(false);
+                sistema.txtCantidad.setEnabled(false);
+                sistema.btnRegistrar.setEnabled(false);
+                sistema.btnLimpiar.setEnabled(false);
+                sistema.btnModificar.setEnabled(true);
+                sistema.btnBuscar.setEnabled(true);
+                sistema.btnEliminar.setEnabled(true);
+                return true;
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Ingrese correctamente sus credenciales");
+                return false;
+            }
         }
     }
 }

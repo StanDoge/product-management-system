@@ -5,13 +5,12 @@ import Interfaces.Proceso;
 
 public class Electrodomestico implements Proceso {
 
-    
+
     String nombre;
     final float IVA = 0.13f;
     String marca;
     int nSerie;
     String tipo;
-    boolean estado = true;
     float precio;
     float precioTotal;
     Empresa propietario;
@@ -34,7 +33,7 @@ public class Electrodomestico implements Proceso {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
     public String getMarca() {
         return marca;
     }
@@ -57,14 +56,6 @@ public class Electrodomestico implements Proceso {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
     }
 
     public float getIVA() {
@@ -98,10 +89,13 @@ public class Electrodomestico implements Proceso {
     //metodos
 
     /**
-     * Inicializa el valor del atributo precioTotal sumando el valor del precio unitario + el IVA de dicho precio
-     * @author Stanley
+     * Calcular el precio total del stock de un tipo de producto. Usando su precio unitario + IVA por la cantidaad
+     * de productos del arreglo.
+     *
+     * @param cantidad Cantidad total de productos a los cuales se les aplicara IVA y sumaran sus precios
+     *                 finales.
      */
-    public void calcularTotal(){
-        this.precioTotal = this.precio + (this.precio * IVA);
+    public void calcularTotal(int cantidad) {
+        this.precioTotal = (this.precio + (this.precio * IVA)) * cantidad;
     }
 }

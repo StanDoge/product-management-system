@@ -3,6 +3,7 @@ package PRN215_4_3;
 import Clases.Electrodomestico;
 import Clases.Empresa;
 import Clases.Entrega;
+import Formularios.Registro;
 
 /**
  *@authors
