@@ -10,14 +10,16 @@ public abstract class Sesion {
     static String admin = "admin";
     static String pswAdmin = "PRN2";
 
+    //Metodo para iniciar sesión
     public static boolean iniciarSesion(String us, String pswUs, String adm, String pswAdm) 
     {
+        //Valida credenciales y muestra formulario Registro
         if (us.equals(Sesion.usuario) && pswUs.equals(Sesion.pswUsuario)) 
         {
             Registro sistema = new Registro();
             sistema.setVisible(true);
             JOptionPane.showMessageDialog(null, " Encargado del sistema: Usuario. ");
-            // Habilita acciones exclusivas de Admin
+            // Habilita acciones exclusivas de Usuario
             sistema.txtPrecioU.setEnabled(true);
             sistema.txtCantidad.setEnabled(true);
             sistema.btnRegistrar.setEnabled(true);
