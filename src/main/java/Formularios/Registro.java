@@ -757,7 +757,9 @@ public class Registro extends javax.swing.JFrame implements Proceso {
 
     // End of variables declaration
 
-    //Metodo para limpiar
+    /**
+     * Elimina los valores ingresados en los campos de texto del formulario
+     */
     public void limpiar() {
         txtAdmin.setText("");
         txtAlmacen.setText("");
