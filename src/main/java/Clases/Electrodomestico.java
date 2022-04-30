@@ -4,8 +4,6 @@ package Clases;
 import Interfaces.Proceso;
 
 public class Electrodomestico implements Proceso {
-
-
     String nombre;
     final float IVA = 0.13f;
     String marca;
@@ -86,14 +84,11 @@ public class Electrodomestico implements Proceso {
         this.propietario = propietario;
     }
 
-    //metodos
-
     /**
-     * Calcular el precio total del stock de un tipo de producto. Usando su precio unitario + IVA por la cantidaad
+     * Calcula el precio total del stock de un tipo de producto. Usando su precio unitario + IVA por la cantidaad
      * de productos del arreglo.
      *
-     * @param cantidad Cantidad total de productos a los cuales se les aplicara IVA y sumaran sus precios
-     *                 finales.
+     * @param cantidad cantidad total de productos a los cuales se les aplicara IVA y sumaran sus precios finales.
      */
     public void calcularTotal(int cantidad) {
         this.precioTotal = (this.precio + (this.precio * IVA)) * cantidad;

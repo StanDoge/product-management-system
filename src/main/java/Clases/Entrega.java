@@ -10,10 +10,13 @@ public class Entrega implements Proceso {
     LocalDate fechaEnvio;
     int cantidadElectrodomesticos;
 
+    Empresa empresa;
+
     //Contructor
-    public Entrega(Electrodomestico[] cantidadElectrodomesticos) {
+    public Entrega(Empresa empresa, Electrodomestico[] cantidadElectrodomesticos) {
         this.entregaID = generarID();
         this.fechaEnvio = generarFecha();
+        this.empresa = empresa;
         this.cantidadElectrodomesticos = cantidadElectrodomesticos.length;
     }
 
@@ -43,10 +46,9 @@ public class Entrega implements Proceso {
     }
 
     /**
-     * Hace un "timestamp" pero solo con la fecha, no hora
+     * Genera la fecha de salida del stock de productos de una empresa X.
      *
-     * @return fecha del momento que el metodo se ejecuta en tipo String y con un formato ISO, mucho mas legible
-     * que el original del objeto Date
+     * @return objeto LocalDate con la fecha.
      */
     @Override
     public LocalDate generarFecha() {
