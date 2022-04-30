@@ -1,15 +1,10 @@
 package Clases;
 
 import Formularios.Registro;
-import static Formularios.Registro.btnBuscar;
-import static Formularios.Registro.btnEliminar;
-import static Formularios.Registro.btnLimpiar;
-import static Formularios.Registro.btnModificar;
-import static Formularios.Registro.btnRegistrar;
-import static Formularios.Registro.txtCantidad;
-import static Formularios.Registro.txtPrecioU;
 
 import javax.swing.*;
+
+import static Formularios.Registro.*;
 
 /**
  * @author Cesar
@@ -19,6 +14,8 @@ public abstract class Sesion {
     static String pswUsuario = "sistema";
     static String admin = "admin";
     static String pswAdmin = "PRN2";
+
+    static Registro sistema = new Registro();
 
     /**
      * Comprueba que las credenciales permitidas y las otorgadas por la persona que esta ingresando al sistema sean las
@@ -34,7 +31,7 @@ public abstract class Sesion {
     public static boolean iniciarSesion(String us, String pswUs, String adm, String pswAdm) {
         //Valida credenciales y muestra formulario Registro
         if (us.equals(Sesion.usuario) && pswUs.equals(Sesion.pswUsuario)) {
-            Registro sistema = new Registro();
+//            Registro sistema = new Registro();
             sistema.setVisible(true);
             // Habilita acciones exclusivas de Usuario
             txtPrecioU.setEnabled(true);
@@ -48,6 +45,7 @@ public abstract class Sesion {
         } else {
             if (adm.equals(Sesion.admin) && pswAdm.equals(Sesion.pswAdmin)) {
                 // Habilita acciones exclusivas de Admin
+                sistema.setVisible(true);
                 txtPrecioU.setEnabled(false);
                 txtCantidad.setEnabled(false);
                 btnRegistrar.setEnabled(false);
