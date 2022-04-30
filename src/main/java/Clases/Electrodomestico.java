@@ -3,6 +3,10 @@ package Clases;
 
 import Interfaces.Proceso;
 
+/**
+ * @author Stanley
+ */
+
 public class Electrodomestico implements Proceso {
     String nombre;
     final float IVA = 0.13f;

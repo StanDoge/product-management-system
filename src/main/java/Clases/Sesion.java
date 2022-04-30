@@ -4,6 +4,9 @@ import Formularios.Registro;
 
 import javax.swing.*;
 
+/**
+ * @author Cesar
+ */
 public abstract class Sesion {
     static String usuario = "user";
     static String pswUsuario = "sistema";

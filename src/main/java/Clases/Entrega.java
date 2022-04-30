@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 
 /**
- * @Author Stanley
+ * @author Stanley
  */
 public class Entrega implements Proceso {
 

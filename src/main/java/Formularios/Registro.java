@@ -13,7 +13,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * @author usuario
+ * @author Adam
  */
 public class Registro extends javax.swing.JFrame implements Proceso {
 
