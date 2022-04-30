@@ -623,7 +623,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     private void txtCantidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadKeyTyped
         // Validando txtCantidad para ingresar cantidad (en numeros)
         char validar = evt.getKeyChar();
-        if (!Character.isDigit(validar)) {
+        if (Character.isLetter(validar)) {
             getToolkit().beep();
             evt.consume();
             JOptionPane.showMessageDialog(rootPane, "Solo ingrese números");
@@ -702,7 +702,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     }//GEN-LAST:event_txtAdminKeyTyped
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // Botón de Buscar (admin)
+        // Botón de Buscar (Admin)
         filaSeleccionada = tbRegistro.getSelectedRow();
         // Devuelve datos a cajas de texto
         if (filaSeleccionada != -1) {
@@ -710,7 +710,6 @@ public class Registro extends javax.swing.JFrame implements Proceso {
             txtNombreP.setText(tbRegistro.getValueAt(filaSeleccionada, 1).toString());
             txtTipo.setText(tbRegistro.getValueAt(filaSeleccionada, 2).toString());
             txtMarca.setText(tbRegistro.getValueAt(filaSeleccionada, 3).toString());
-            //txtPrecioU.setText(tbRegistro.getValueAt(filaSeleccionada, 4).toString());
             txtEmpresa.setText(tbRegistro.getValueAt(filaSeleccionada, 6).toString());
             txtPais.setText(tbRegistro.getValueAt(filaSeleccionada, 7).toString());
             txtAdmin.setText(tbRegistro.getValueAt(filaSeleccionada, 8).toString());
@@ -725,8 +724,6 @@ public class Registro extends javax.swing.JFrame implements Proceso {
             tbRegistro.setValueAt(txtNombreP.getText(), filaSeleccionada, 1);
             tbRegistro.setValueAt(txtTipo.getText(), filaSeleccionada, 2);
             tbRegistro.setValueAt(txtMarca.getText(), filaSeleccionada, 3);
-
-            //tbRegistro.setValueAt(txtPrecioU.getText(), filaSeleccionada, 4);
             tbRegistro.setValueAt(txtEmpresa.getText(), filaSeleccionada, 6);
             tbRegistro.setValueAt(txtPais.getText(), filaSeleccionada, 7);
             tbRegistro.setValueAt(txtAdmin.getText(), filaSeleccionada, 8);
