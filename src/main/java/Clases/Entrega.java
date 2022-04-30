@@ -10,13 +10,10 @@ public class Entrega implements Proceso {
     LocalDate fechaEnvio;
     int cantidadElectrodomesticos;
 
-    Empresa empresa;
-
     //Contructor
-    public Entrega(Empresa empresa, Electrodomestico[] cantidadElectrodomesticos) {
+    public Entrega(Electrodomestico[] cantidadElectrodomesticos) {
         this.entregaID = generarID();
         this.fechaEnvio = generarFecha();
-        this.empresa = empresa;
         this.cantidadElectrodomesticos = cantidadElectrodomesticos.length;
     }
 

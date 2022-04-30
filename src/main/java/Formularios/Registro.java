@@ -602,7 +602,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
             Administrador administradorGenerico = new Administrador(txtAdmin.getText());
             Electrodomestico[] stockProductos = empresaGenerica.generarProducto(txtNombreP.getText(), txtMarca.getText(),
                     txtTipo.getText(), precioGenerico, empresaGenerica, cantidadGenerica);
-            Entrega entregaGenerica = new Entrega(empresaGenerica, stockProductos);
+            Entrega entregaGenerica = new Entrega(stockProductos);
             Almacen almacenGenerico = new Almacen(txtAlmacen.getText(), administradorGenerico, entregaGenerica,
                     txtDireccion.getText());
 
