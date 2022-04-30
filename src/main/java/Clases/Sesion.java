@@ -18,7 +18,7 @@ public abstract class Sesion {
         {
             Registro sistema = new Registro();
             sistema.setVisible(true);
-            JOptionPane.showMessageDialog(null, " Encargado del sistema: Usuario. ");
+            JOptionPane.showMessageDialog(null, " Bienvenido al sistema de Registro. ");
             // Habilita acciones exclusivas de Usuario
             sistema.txtPrecioU.setEnabled(true);
             sistema.txtCantidad.setEnabled(true);
@@ -35,7 +35,7 @@ public abstract class Sesion {
             {
                 Registro sistema = new Registro();
                 sistema.setVisible(true);
-                JOptionPane.showMessageDialog(null, " Encargado del sistema: Administrador. ");
+                JOptionPane.showMessageDialog(null, " Bienvenido al sistema. ");
                 sistema.limpiar();
             // Habilita acciones exclusivas de Admin
                 sistema.txtPrecioU.setEnabled(false);
