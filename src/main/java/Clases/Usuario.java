@@ -11,13 +11,12 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.text.DecimalFormat;
 
+/**
+ * @author Cesar
+ */
 public class Usuario extends Persona implements Proceso {
     public Usuario(String usuario) {
         this.ID = generarID();
-    }
-
-    public void consultarProducto() {
-        //...
     }
 
     /**
