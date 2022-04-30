@@ -4,6 +4,10 @@ import Interfaces.Proceso;
 
 import java.time.LocalDate;
 
+
+/**
+ * @Author Stanley
+ */
 public class Entrega implements Proceso {
 
     int entregaID;
