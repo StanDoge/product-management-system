@@ -14,7 +14,6 @@ public abstract class Sesion {
     static String pswUsuario = "sistema";
     static String admin = "admin";
     static String pswAdmin = "PRN2";
-
     static Registro sistema = new Registro();
 
     /**
@@ -31,7 +30,6 @@ public abstract class Sesion {
     public static boolean iniciarSesion(String us, String pswUs, String adm, String pswAdm) {
         //Valida credenciales y muestra formulario Registro
         if (us.equals(Sesion.usuario) && pswUs.equals(Sesion.pswUsuario)) {
-//            Registro sistema = new Registro();
             sistema.setVisible(true);
             // Habilita acciones exclusivas de Usuario
             txtPrecioU.setEnabled(true);
