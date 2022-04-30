@@ -4,6 +4,9 @@ import Interfaces.Proceso;
 
 import java.time.LocalDate;
 
+/**
+ * @author Stanley
+ */
 public class Almacen implements Proceso {
     String nombre;
     Administrador admin;
