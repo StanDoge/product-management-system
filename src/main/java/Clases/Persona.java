@@ -6,7 +6,7 @@
 package Clases;
 
 /**
- * @author César
+ * @author Cesar
  */
 public abstract class Persona {
     protected int ID;

@@ -4,21 +4,32 @@ import Formularios.Registro;
 
 import javax.swing.*;
 
+/**
+ * @author Cesar
+ */
 public abstract class Sesion {
     static String usuario = "user";
     static String pswUsuario = "sistema";
     static String admin = "admin";
     static String pswAdmin = "PRN2";
 
-    //Metodo para iniciar sesión
-    public static boolean iniciarSesion(String us, String pswUs, String adm, String pswAdm) 
-    {
+    /**
+     * Comprueba que las credenciales permitidas y las otorgadas por la persona que esta ingresando al sistema sean las
+     * correctas.
+     *
+     * @param us     nombre identificador del rol usuario.
+     * @param pswUs  contrasenia del rol usuario.
+     * @param adm    nombre identificador del rol administrador.
+     * @param pswAdm contrasenia del rol administrador.
+     * @return dato de tipo boolean que indica si las credencias entregadas coonciden o no con las definidas
+     * en la clase Sesion.
+     */
+    public static boolean iniciarSesion(String us, String pswUs, String adm, String pswAdm) {
         //Valida credenciales y muestra formulario Registro
-        if (us.equals(Sesion.usuario) && pswUs.equals(Sesion.pswUsuario)) 
-        {
+        if (us.equals(Sesion.usuario) && pswUs.equals(Sesion.pswUsuario)) {
             Registro sistema = new Registro();
             sistema.setVisible(true);
-            JOptionPane.showMessageDialog(null, " Encargado del sistema: Usuario. ");
+            JOptionPane.showMessageDialog(null, " Bienvenido al sistema de Registro. ");
             // Habilita acciones exclusivas de Usuario
             sistema.txtPrecioU.setEnabled(true);
             sistema.txtCantidad.setEnabled(true);
@@ -28,16 +39,13 @@ public abstract class Sesion {
             sistema.btnBuscar.setEnabled(false);
             sistema.btnEliminar.setEnabled(false);
             return true;
-        } 
-        else 
-        {
-            if(adm.equals(Sesion.admin) && pswAdm.equals(Sesion.pswAdmin))
-            {
+        } else {
+            if (adm.equals(Sesion.admin) && pswAdm.equals(Sesion.pswAdmin)) {
                 Registro sistema = new Registro();
                 sistema.setVisible(true);
-                JOptionPane.showMessageDialog(null, " Encargado del sistema: Administrador. ");
+                JOptionPane.showMessageDialog(null, " Bienvenido al sistema. ");
                 sistema.limpiar();
-            // Habilita acciones exclusivas de Admin
+                // Habilita acciones exclusivas de Admin
                 sistema.txtPrecioU.setEnabled(false);
                 sistema.txtCantidad.setEnabled(false);
                 sistema.btnRegistrar.setEnabled(false);
@@ -46,9 +54,7 @@ public abstract class Sesion {
                 sistema.btnBuscar.setEnabled(true);
                 sistema.btnEliminar.setEnabled(true);
                 return true;
-            }
-            else
-            {
+            } else {
                 JOptionPane.showMessageDialog(null, "Ingrese correctamente sus credenciales");
                 return false;
             }

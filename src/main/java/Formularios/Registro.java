@@ -13,7 +13,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * @author usuario
+ * @author Adam
  */
 public class Registro extends javax.swing.JFrame implements Proceso {
 
@@ -141,6 +141,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(181, 205, 205));
 
         lblSistema.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 16)); // NOI18N
         lblSistema.setText("Sistema de administración de electrodomesticos al almacén SV ");
@@ -428,6 +429,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro y Modificación de Datos"));
 
+        tbRegistro.setBackground(new java.awt.Color(255, 255, 204));
         tbRegistro.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
 
@@ -444,7 +446,16 @@ public class Registro extends javax.swing.JFrame implements Proceso {
                 return types[columnIndex];
             }
         });
+        tbRegistro.setRowHeight(25);
         jScrollPane1.setViewportView(tbRegistro);
+        if (tbRegistro.getColumnModel().getColumnCount() > 0) {
+            tbRegistro.getColumnModel().getColumn(0).setPreferredWidth(45);
+            tbRegistro.getColumnModel().getColumn(1).setPreferredWidth(65);
+            tbRegistro.getColumnModel().getColumn(3).setPreferredWidth(65);
+            tbRegistro.getColumnModel().getColumn(4).setPreferredWidth(45);
+            tbRegistro.getColumnModel().getColumn(5).setPreferredWidth(55);
+            tbRegistro.getColumnModel().getColumn(9).setPreferredWidth(60);
+        }
 
         btnBuscar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBuscar.setText("Buscar");
@@ -477,10 +488,10 @@ public class Registro extends javax.swing.JFrame implements Proceso {
                         .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
+                                        .addComponent(jScrollPane1)
                                         .addGroup(jPanel5Layout.createSequentialGroup()
                                                 .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
                                                 .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(232, 232, 232)
                                                 .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -513,8 +524,8 @@ public class Registro extends javax.swing.JFrame implements Proceso {
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(22, 22, 22)
                                                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(21, 21, 21)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addGroup(layout.createSequentialGroup()
@@ -526,7 +537,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
                                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(0, 23, Short.MAX_VALUE))
+                                .addGap(0, 38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -623,7 +634,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     private void txtCantidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadKeyTyped
         // Validando txtCantidad para ingresar cantidad (en numeros)
         char validar = evt.getKeyChar();
-        if (!Character.isDigit(validar)) {
+        if (Character.isLetter(validar)) {
             getToolkit().beep();
             evt.consume();
             JOptionPane.showMessageDialog(rootPane, "Solo ingrese números");
@@ -702,7 +713,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     }//GEN-LAST:event_txtAdminKeyTyped
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // Botón de Buscar (admin)
+        // Botón de Buscar (Admin)
         filaSeleccionada = tbRegistro.getSelectedRow();
         // Devuelve datos a cajas de texto
         if (filaSeleccionada != -1) {
@@ -710,7 +721,6 @@ public class Registro extends javax.swing.JFrame implements Proceso {
             txtNombreP.setText(tbRegistro.getValueAt(filaSeleccionada, 1).toString());
             txtTipo.setText(tbRegistro.getValueAt(filaSeleccionada, 2).toString());
             txtMarca.setText(tbRegistro.getValueAt(filaSeleccionada, 3).toString());
-            //txtPrecioU.setText(tbRegistro.getValueAt(filaSeleccionada, 4).toString());
             txtEmpresa.setText(tbRegistro.getValueAt(filaSeleccionada, 6).toString());
             txtPais.setText(tbRegistro.getValueAt(filaSeleccionada, 7).toString());
             txtAdmin.setText(tbRegistro.getValueAt(filaSeleccionada, 8).toString());
@@ -725,8 +735,6 @@ public class Registro extends javax.swing.JFrame implements Proceso {
             tbRegistro.setValueAt(txtNombreP.getText(), filaSeleccionada, 1);
             tbRegistro.setValueAt(txtTipo.getText(), filaSeleccionada, 2);
             tbRegistro.setValueAt(txtMarca.getText(), filaSeleccionada, 3);
-
-            //tbRegistro.setValueAt(txtPrecioU.getText(), filaSeleccionada, 4);
             tbRegistro.setValueAt(txtEmpresa.getText(), filaSeleccionada, 6);
             tbRegistro.setValueAt(txtPais.getText(), filaSeleccionada, 7);
             tbRegistro.setValueAt(txtAdmin.getText(), filaSeleccionada, 8);
@@ -749,7 +757,9 @@ public class Registro extends javax.swing.JFrame implements Proceso {
 
     // End of variables declaration
 
-    //Metodo para limpiar
+    /**
+     * Elimina los valores ingresados en los campos de texto del formulario
+     */
     public void limpiar() {
         txtAdmin.setText("");
         txtAlmacen.setText("");

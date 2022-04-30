@@ -4,6 +4,10 @@ import Interfaces.Proceso;
 
 import java.time.LocalDate;
 
+
+/**
+ * @author Stanley
+ */
 public class Entrega implements Proceso {
 
     int entregaID;
@@ -43,10 +47,9 @@ public class Entrega implements Proceso {
     }
 
     /**
-     * Hace un "timestamp" pero solo con la fecha, no hora
+     * Genera la fecha de salida del stock de productos de una empresa X.
      *
-     * @return fecha del momento que el metodo se ejecuta en tipo String y con un formato ISO, mucho mas legible
-     * que el original del objeto Date
+     * @return objeto LocalDate con la fecha.
      */
     @Override
     public LocalDate generarFecha() {

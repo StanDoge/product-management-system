@@ -4,6 +4,9 @@ import Clases.Sesion;
 
 import javax.swing.*;
 
+/**
+ * @author Adam
+ */
 public class InicioSesion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

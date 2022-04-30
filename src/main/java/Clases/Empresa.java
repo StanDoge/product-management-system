@@ -4,6 +4,9 @@ import Interfaces.Proceso;
 
 import javax.swing.*;
 
+/**
+ * @author Stanley
+ */
 public class Empresa implements Proceso {
 
     int empresaID;
