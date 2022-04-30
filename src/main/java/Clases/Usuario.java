@@ -24,9 +24,12 @@ public class Usuario extends Persona implements Proceso {
     }
 
     /**
-     * Envio desde el arreglo de productos hasta la tabla del formulario
+     * Usando un arreglo agrega c/u de los elementos en el en la tabla para mostrar los valores de sus atributos.
      *
-     * @param e arreglo de electrodomesticos para obtener los valores de sus atributos
+     * @param e     arreglo de Electrodomesticos.
+     * @param em    objeto Empresa.
+     * @param local objeto Almacen.
+     * @param table objeto JTable donde se agregaran los valores de elementos del arreglo.
      */
     public static void registrarProducto(Electrodomestico[] e, Empresa em, Almacen local, JTable table) {
         DefaultTableModel modelo = (DefaultTableModel) table.getModel();

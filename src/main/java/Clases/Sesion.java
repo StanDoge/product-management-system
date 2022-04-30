@@ -11,6 +11,9 @@ public abstract class Sesion {
     static String pswAdmin = "PRN2";
 
     /**
+     * Comprueba que las credenciales permitidas y las otorgadas por la persona que esta ingresando al sistema sean las
+     * correctas.
+     *
      * @param us     nombre identificador del rol usuario.
      * @param pswUs  contrasenia del rol usuario.
      * @param adm    nombre identificador del rol administrador.
@@ -18,7 +21,6 @@ public abstract class Sesion {
      * @return dato de tipo boolean que indica si las credencias entregadas coonciden o no con las definidas
      * en la clase Sesion.
      */
-    //Metodo para iniciar sesión
     public static boolean iniciarSesion(String us, String pswUs, String adm, String pswAdm) {
         //Valida credenciales y muestra formulario Registro
         if (us.equals(Sesion.usuario) && pswUs.equals(Sesion.pswUsuario)) {
