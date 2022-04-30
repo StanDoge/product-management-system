@@ -1,6 +1,13 @@
 package Clases;
 
 import Formularios.Registro;
+import static Formularios.Registro.btnBuscar;
+import static Formularios.Registro.btnEliminar;
+import static Formularios.Registro.btnLimpiar;
+import static Formularios.Registro.btnModificar;
+import static Formularios.Registro.btnRegistrar;
+import static Formularios.Registro.txtCantidad;
+import static Formularios.Registro.txtPrecioU;
 
 import javax.swing.*;
 
@@ -29,30 +36,25 @@ public abstract class Sesion {
         if (us.equals(Sesion.usuario) && pswUs.equals(Sesion.pswUsuario)) {
             Registro sistema = new Registro();
             sistema.setVisible(true);
-            JOptionPane.showMessageDialog(null, " Bienvenido al sistema de Registro. ");
             // Habilita acciones exclusivas de Usuario
-            sistema.txtPrecioU.setEnabled(true);
-            sistema.txtCantidad.setEnabled(true);
-            sistema.btnRegistrar.setEnabled(true);
-            sistema.btnLimpiar.setEnabled(true);
-            sistema.btnModificar.setEnabled(false);
-            sistema.btnBuscar.setEnabled(false);
-            sistema.btnEliminar.setEnabled(false);
+            txtPrecioU.setEnabled(true);
+            txtCantidad.setEnabled(true);
+            btnRegistrar.setEnabled(true);
+            btnLimpiar.setEnabled(true);
+            btnModificar.setEnabled(false);
+            btnBuscar.setEnabled(false);
+            btnEliminar.setEnabled(false);
             return true;
         } else {
             if (adm.equals(Sesion.admin) && pswAdm.equals(Sesion.pswAdmin)) {
-                Registro sistema = new Registro();
-                sistema.setVisible(true);
-                JOptionPane.showMessageDialog(null, " Bienvenido al sistema. ");
-                sistema.limpiar();
                 // Habilita acciones exclusivas de Admin
-                sistema.txtPrecioU.setEnabled(false);
-                sistema.txtCantidad.setEnabled(false);
-                sistema.btnRegistrar.setEnabled(false);
-                sistema.btnLimpiar.setEnabled(false);
-                sistema.btnModificar.setEnabled(true);
-                sistema.btnBuscar.setEnabled(true);
-                sistema.btnEliminar.setEnabled(true);
+                txtPrecioU.setEnabled(false);
+                txtCantidad.setEnabled(false);
+                btnRegistrar.setEnabled(false);
+                btnLimpiar.setEnabled(false);
+                btnModificar.setEnabled(true);
+                btnBuscar.setEnabled(true);
+                btnEliminar.setEnabled(true);
                 return true;
             } else {
                 JOptionPane.showMessageDialog(null, "Ingrese correctamente sus credenciales");
