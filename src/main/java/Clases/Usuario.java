@@ -33,7 +33,7 @@ public class Usuario extends Persona implements Proceso {
 
         for (Electrodomestico p : e) {
 
-            String[] fila = new String[10];
+            String[] fila = new String[12];
 
             fila[0] = Integer.toString(p.getnSerie());
             fila[1] = p.getNombre();
@@ -45,6 +45,8 @@ public class Usuario extends Persona implements Proceso {
             fila[7] = em.getPais();
             fila[8] = local.admin.getNombre();
             fila[9] = local.getFechaRecibido().toString();
+            fila[10] = local.getNombre();
+            fila[11] = local.getDireccion();
             modelo.addRow(fila);
 
         }
