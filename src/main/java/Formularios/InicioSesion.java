@@ -151,6 +151,7 @@ public class InicioSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAccesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccesoActionPerformed
+        // Botón para acceder al formulario Registro
         String user, pwd, admin, pwdA;
 
         // obtenemos la entrada por teclado mediante las textBox
@@ -174,6 +175,7 @@ public class InicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAccesoActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // Botón para Salir del sistema 
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
     // End of variables declaration                   
