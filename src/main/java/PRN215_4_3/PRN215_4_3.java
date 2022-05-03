@@ -8,7 +8,7 @@ import Formularios.Registro;
 /**
  *@authors
  *Adam ER21008
- *Cesar CARNET
+ *Cesar RT21001
  *Stanley MR21083
  **/
 
