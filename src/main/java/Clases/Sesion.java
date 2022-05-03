@@ -37,7 +37,7 @@ public abstract class Sesion {
             btnRegistrar.setEnabled(true);
             btnLimpiar.setEnabled(true);
             btnModificar.setEnabled(false);
-            btnBuscar.setEnabled(false);
+            btnSeleccionar.setEnabled(false);
             btnEliminar.setEnabled(false);
             return true;
         } else {
@@ -49,7 +49,7 @@ public abstract class Sesion {
                 btnRegistrar.setEnabled(false);
                 btnLimpiar.setEnabled(false);
                 btnModificar.setEnabled(true);
-                btnBuscar.setEnabled(true);
+                btnSeleccionar.setEnabled(true);
                 btnEliminar.setEnabled(true);
                 return true;
             } else {

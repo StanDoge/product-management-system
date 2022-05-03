@@ -21,11 +21,11 @@ public class Registro extends javax.swing.JFrame implements Proceso {
     int filaSeleccionada = -1;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JButton btnBuscar;
     public static javax.swing.JButton btnEliminar;
     public static javax.swing.JButton btnLimpiar;
     public static javax.swing.JButton btnModificar;
     public static javax.swing.JButton btnRegistrar;
+    public static javax.swing.JButton btnSeleccionar;
     public javax.swing.JButton btnSesion;
     private javax.swing.JLabel lblCantidad;
     private javax.swing.JLabel lblDireccion;
@@ -135,7 +135,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         panelRegistro = new javax.swing.JPanel();
         scpDatos = new javax.swing.JScrollPane();
         tbRegistro = new javax.swing.JTable();
-        btnBuscar = new javax.swing.JButton();
+        btnSeleccionar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         separatorRegistro = new javax.swing.JSeparator();
@@ -283,7 +283,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panelEmpresaLayout.createSequentialGroup()
                         .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(20, Short.MAX_VALUE))))
+                        .addContainerGap(24, Short.MAX_VALUE))))
         );
         panelEmpresaLayout.setVerticalGroup(
             panelEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -459,11 +459,11 @@ public class Registro extends javax.swing.JFrame implements Proceso {
             tbRegistro.getColumnModel().getColumn(11).setPreferredWidth(35);
         }
 
-        btnBuscar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnBuscar.setText("Buscar");
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+        btnSeleccionar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnSeleccionar.setText("Seleccionar");
+        btnSeleccionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
+                btnSeleccionarActionPerformed(evt);
             }
         });
 
@@ -492,7 +492,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
                 .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(scpDatos)
                     .addGroup(panelRegistroLayout.createSequentialGroup()
-                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE)
                         .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(257, 257, 257)
@@ -506,7 +506,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
                 .addComponent(scpDatos, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
@@ -528,7 +528,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
                         .addComponent(panelRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(separatorRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -718,7 +718,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         }
     }//GEN-LAST:event_txtAdminKeyTyped
 
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+    private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
         // Botón de Buscar (Admin)
         filaSeleccionada = tbRegistro.getSelectedRow();
         // Devuelve datos a cajas de texto
@@ -735,7 +735,7 @@ public class Registro extends javax.swing.JFrame implements Proceso {
         } else {
             JOptionPane.showMessageDialog(null, "Seleccione una fila.");
         }
-    }//GEN-LAST:event_btnBuscarActionPerformed
+    }//GEN-LAST:event_btnSeleccionarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         // Botón de Modificar (Admin)
