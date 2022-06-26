@@ -9,6 +9,7 @@ We're three mates, all work in the project in the same way giving our ideas and 
 
 ### Class
 Class diagram: using at least four classes as a minimum.
+<img src='https://i.imgur.com/I4inVIA.jpg'>
 
 
 
